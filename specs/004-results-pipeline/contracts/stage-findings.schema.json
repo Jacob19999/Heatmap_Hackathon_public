@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://burncare-equity/specs/004-results-pipeline/contracts/stage-findings.schema.json",
+  "title": "Stage Findings Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_id",
+    "question",
+    "finding",
+    "why_it_matters",
+    "action_implication"
+  ],
+  "properties": {
+    "stage_id": {
+      "type": "string",
+      "pattern": "^(0[0-9]|10)$"
+    },
+    "question": {
+      "type": "string",
+      "minLength": 10
+    },
+    "finding": {
+      "type": "string",
+      "minLength": 10
+    },
+    "why_it_matters": {
+      "type": "string",
+      "minLength": 10
+    },
+    "action_implication": {
+      "type": "string",
+      "minLength": 10
+    },
+    "scenario_id": {
+      "type": "string",
+      "enum": [
+        "ground_only",
+        "ground_plus_air"
+      ]
+    }
+  }
+}

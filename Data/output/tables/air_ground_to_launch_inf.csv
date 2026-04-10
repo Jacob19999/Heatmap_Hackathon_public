@@ -1,0 +1,3 @@
+origin_id,destination_id,duration_min,valhalla_status_code,valhalla_error,origin_lat,origin_lon,destination_lat,destination_lon
+27095970100,EAU,inf,,,46.20705,-93.4884181,44.86580555,-91.48425
+27169670900,EAU,inf,,,43.935583,-91.8427914,44.86580555,-91.48425

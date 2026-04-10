@@ -1,0 +1,61 @@
+{
+  "run_id": "stage00",
+  "profile": "full",
+  "created_at": "2026-03-16T23:58:53.972565+00:00",
+  "artifacts": [
+    {
+      "artifact_id": "00_dataset_nird_clean",
+      "stage_id": "00",
+      "artifact_type": "dataset",
+      "path": "data\\interim\\nird_clean.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "00_table_quality",
+      "stage_id": "00",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\00_tables_data_quality_summary_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "00_table_classes",
+      "stage_id": "00",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\00_tables_facility_class_counts_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "00_fig_quality",
+      "stage_id": "00",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\00_figures_data_quality_summary_ground_only.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "00_fig_classes",
+      "stage_id": "00",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\00_figures_facility_class_counts_ground_only.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "00_finding",
+      "stage_id": "00",
+      "artifact_type": "finding",
+      "path": "outputs\\metrics\\00_findings_ground_only.json",
+      "format": "json",
+      "artifact_role": "",
+      "scenario_id": null
+    }
+  ]
+}

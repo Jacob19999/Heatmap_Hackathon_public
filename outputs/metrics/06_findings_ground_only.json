@@ -1,0 +1,8 @@
+{
+  "stage_id": "06",
+  "question": "Where is structural capacity competition highest?",
+  "finding": "Structural catchments and competition scores were computed by county; metrics reflect infrastructure capacity only and do not represent real-time bed availability.",
+  "why_it_matters": "Structural competition identifies areas where demand for burn care infrastructure is high relative to installed capacity.",
+  "action_implication": "Use structural capacity outputs for BEI when running full profile; do not interpret as real-time occupancy.",
+  "scenario_id": "ground_only"
+}

@@ -1,0 +1,5 @@
+# Baseline scenario: ground transport only.
+scenario: ground_only
+air_assumptions: {}
+routing:
+  transfer_penalty_minutes: 45

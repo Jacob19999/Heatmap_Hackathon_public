@@ -1,0 +1,8 @@
+{
+  "stage_id": "02",
+  "question": "How is burn-center supply distributed across the country?",
+  "finding": "136 definitive burn centers across 44 states. National average: 0.05 centers per 100k.",
+  "why_it_matters": "Uneven supply distribution is a structural driver of burn care inequity.",
+  "action_implication": "Target capacity investments in states with zero or near-zero burn-center supply.",
+  "scenario_id": "ground_only"
+}

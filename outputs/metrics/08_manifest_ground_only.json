@@ -1,0 +1,52 @@
+{
+  "run_id": "stage08",
+  "profile": "full",
+  "created_at": "2026-03-16T23:59:12.502933+00:00",
+  "artifacts": [
+    {
+      "artifact_id": "08_dataset_bei",
+      "stage_id": "08",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\bei_hotspots.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "08_table_hotspots",
+      "stage_id": "08",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\08_tables_bei_hotspots_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "08_fig_bei_rank",
+      "stage_id": "08",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\08_figures_bei_rank_ground_only.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "08_top_hotspots",
+      "stage_id": "08",
+      "artifact_type": "table",
+      "path": "outputs\\final_bundle\\top_hotspots.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "08_finding",
+      "stage_id": "08",
+      "artifact_type": "finding",
+      "path": "outputs\\metrics\\08_findings_ground_only.json",
+      "format": "json",
+      "artifact_role": "",
+      "scenario_id": null
+    }
+  ]
+}

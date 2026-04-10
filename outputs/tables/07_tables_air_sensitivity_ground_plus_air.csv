@@ -1,0 +1,2 @@
+tract_geoid,state_fips,county_fips,travel_minutes,population_total,travel_minutes_ground,travel_minutes_air_capped,scenario
+00000000000,00,00000,0.0,490000,0.0,0.0,ground_plus_air

@@ -1,0 +1,169 @@
+origin_id,destination_id,duration_min,valhalla_status_code,valhalla_error,origin_lat,origin_lon,destination_lat,destination_lon
+02013,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.5141209,-161.72839440000004,61.18978905,-149.8189332
+02013,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.5141209,-161.72839440000004,61.18193792,-149.8028783
+02013,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.5141209,-161.72839440000004,48.77231769,-122.4747356
+02013,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.5141209,-161.72839440000004,48.00005922,-122.2080068
+02013,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.5141209,-161.72839440000004,47.60415599,-122.3235705
+02016,6810003,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",53.34010727200613,-108.56328991553936,47.49225081,-111.2625301
+02016,6640004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",53.34010727200613,-108.56328991553936,48.232645,-101.286907
+02016,6810430,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",53.34010727200613,-108.56328991553936,46.87394115,-113.9999875
+02016,6810030,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",53.34010727200613,-108.56328991553936,45.79294992,-108.5199227
+02016,6810020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",53.34010727200613,-108.56328991553936,45.79042797,-108.5140491
+02020,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.18993472472598,-149.78462963431198,48.77231769,-122.4747356
+02020,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.18993472472598,-149.78462963431198,48.00005922,-122.2080068
+02020,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.18993472472598,-149.78462963431198,47.60415599,-122.3235705
+02050,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.625400864370484,-161.95249395167224,61.18978905,-149.8189332
+02050,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.625400864370484,-161.95249395167224,61.18193792,-149.8028783
+02050,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.625400864370484,-161.95249395167224,48.77231769,-122.4747356
+02050,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.625400864370484,-161.95249395167224,48.00005922,-122.2080068
+02050,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.625400864370484,-161.95249395167224,47.60415599,-122.3235705
+02060,6940020,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",58.7305457,-156.994473,61.18978905,-149.8189332
+02060,6940010,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",58.7305457,-156.994473,61.18193792,-149.8028783
+02060,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.7305457,-156.994473,48.77231769,-122.4747356
+02060,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.7305457,-156.994473,48.00005922,-122.2080068
+02060,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.7305457,-156.994473,47.60415599,-122.3235705
+02063,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.611123695799996,-146.4563872828,48.77231769,-122.4747356
+02063,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.611123695799996,-146.4563872828,48.00005922,-122.2080068
+02063,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.611123695799996,-146.4563872828,47.60415599,-122.3235705
+02066,6940010,inf,,,62.034479,-143.9221674,61.18193792,-149.8028783
+02066,6940020,inf,,,62.034479,-143.9221674,61.18978905,-149.8189332
+02066,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.034479,-143.9221674,48.77231769,-122.4747356
+02066,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.034479,-143.9221674,48.00005922,-122.2080068
+02066,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.034479,-143.9221674,47.60415599,-122.3235705
+02068,6940020,inf,,,63.68203859999999,-150.0270164,61.18978905,-149.8189332
+02068,6940010,inf,,,63.68203859999999,-150.0270164,61.18193792,-149.8028783
+02068,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.68203859999999,-150.0270164,48.77231769,-122.4747356
+02068,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.68203859999999,-150.0270164,48.00005922,-122.2080068
+02068,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.68203859999999,-150.0270164,47.60415599,-122.3235705
+02070,6940020,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",59.31752542919242,-158.45329231545116,61.18978905,-149.8189332
+02070,6940010,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",59.31752542919242,-158.45329231545116,61.18193792,-149.8028783
+02070,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.31752542919242,-158.45329231545116,48.77231769,-122.4747356
+02070,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.31752542919242,-158.45329231545116,48.00005922,-122.2080068
+02070,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.31752542919242,-158.45329231545116,47.60415599,-122.3235705
+02090,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.8060584649415,-147.55899199791585,48.77231769,-122.4747356
+02090,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.8060584649415,-147.55899199791585,48.00005922,-122.2080068
+02090,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.8060584649415,-147.55899199791585,47.60415599,-122.3235705
+02100,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.0984037,-135.5757906,61.18193792,-149.8028783
+02100,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.0984037,-135.5757906,61.18978905,-149.8189332
+02100,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.0984037,-135.5757906,48.77231769,-122.4747356
+02100,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.0984037,-135.5757906,48.00005922,-122.2080068
+02100,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.0984037,-135.5757906,47.60415599,-122.3235705
+02105,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.0735321,-135.513003,61.18193792,-149.8028783
+02105,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.0735321,-135.513003,61.18978905,-149.8189332
+02105,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.0735321,-135.513003,48.77231769,-122.4747356
+02105,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.0735321,-135.513003,48.00005922,-122.2080068
+02105,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.0735321,-135.513003,47.60415599,-122.3235705
+02110,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.402715479970716,-134.46673441871187,61.18193792,-149.8028783
+02110,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.402715479970716,-134.46673441871187,61.18978905,-149.8189332
+02110,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.402715479970716,-134.46673441871187,48.77231769,-122.4747356
+02110,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.402715479970716,-134.46673441871187,48.00005922,-122.2080068
+02110,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.402715479970716,-134.46673441871187,47.60415599,-122.3235705
+02122,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.238757886138266,-151.0580573280375,48.77231769,-122.4747356
+02122,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.238757886138266,-151.0580573280375,48.00005922,-122.2080068
+02122,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.238757886138266,-151.0580573280375,47.60415599,-122.3235705
+02130,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.367112750855505,-131.6306653371675,48.77231769,-122.4747356
+02130,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.367112750855505,-131.6306653371675,48.00005922,-122.2080068
+02130,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.367112750855505,-131.6306653371675,47.60415599,-122.3235705
+02130,6911018,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.367112750855505,-131.6306653371675,47.26005107,-122.4534651
+02130,6911033,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.367112750855505,-131.6306653371675,47.2600314,-122.4534605
+02158,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.2835555,-163.1901536,61.18978905,-149.8189332
+02158,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.2835555,-163.1901536,61.18193792,-149.8028783
+02158,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.2835555,-163.1901536,48.77231769,-122.4747356
+02158,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.2835555,-163.1901536,48.00005922,-122.2080068
+02158,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",62.2835555,-163.1901536,47.60415599,-122.3235705
+02150,6940010,inf,,,57.72970502183696,-152.64254659927286,61.18193792,-149.8028783
+02150,6940020,inf,,,57.72970502183696,-152.64254659927286,61.18978905,-149.8189332
+02150,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.72970502183696,-152.64254659927286,48.77231769,-122.4747356
+02150,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.72970502183696,-152.64254659927286,48.00005922,-122.2080068
+02150,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.72970502183696,-152.64254659927286,47.60415599,-122.3235705
+02170,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.6081295019952,-149.39390184742547,48.77231769,-122.4747356
+02170,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.6081295019952,-149.39390184742547,48.00005922,-122.2080068
+02170,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",61.6081295019952,-149.39390184742547,47.60415599,-122.3235705
+02180,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.70793225947295,-164.69335913226192,61.18978905,-149.8189332
+02180,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.70793225947295,-164.69335913226192,61.18193792,-149.8028783
+02180,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.70793225947295,-164.69335913226192,48.77231769,-122.4747356
+02180,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.70793225947295,-164.69335913226192,48.00005922,-122.2080068
+02180,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",64.70793225947295,-164.69335913226192,47.60415599,-122.3235705
+02185,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",70.4817799125595,-153.92290847055108,61.18978905,-149.8189332
+02185,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",70.4817799125595,-153.92290847055108,61.18193792,-149.8028783
+02185,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",70.4817799125595,-153.92290847055108,48.77231769,-122.4747356
+02185,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",70.4817799125595,-153.92290847055108,48.00005922,-122.2080068
+02185,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",70.4817799125595,-153.92290847055108,47.60415599,-122.3235705
+02188,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",66.92360070749805,-160.92457381785994,61.18978905,-149.8189332
+02188,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",66.92360070749805,-160.92457381785994,61.18193792,-149.8028783
+02188,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",66.92360070749805,-160.92457381785994,48.77231769,-122.4747356
+02188,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",66.92360070749805,-160.92457381785994,48.00005922,-122.2080068
+02188,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",66.92360070749805,-160.92457381785994,47.60415599,-122.3235705
+02195,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.11245809999999,-133.0085979,61.18193792,-149.8028783
+02195,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.11245809999999,-133.0085979,61.18978905,-149.8189332
+02195,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.11245809999999,-133.0085979,48.77231769,-122.4747356
+02195,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.11245809999999,-133.0085979,48.00005922,-122.2080068
+02195,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.11245809999999,-133.0085979,47.60415599,-122.3235705
+02198,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.43802531258838,-132.63907039567167,48.77231769,-122.4747356
+02198,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.43802531258838,-132.63907039567167,48.00005922,-122.2080068
+02198,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.43802531258838,-132.63907039567167,47.60415599,-122.3235705
+02198,6911018,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.43802531258838,-132.63907039567167,47.26005107,-122.4534651
+02198,6911033,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",55.43802531258838,-132.63907039567167,47.2600314,-122.4534605
+02220,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.01726465967856,-135.2513938582132,61.18193792,-149.8028783
+02220,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.01726465967856,-135.2513938582132,61.18978905,-149.8189332
+02220,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.01726465967856,-135.2513938582132,48.77231769,-122.4747356
+02220,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.01726465967856,-135.2513938582132,48.00005922,-122.2080068
+02220,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",57.01726465967856,-135.2513938582132,47.60415599,-122.3235705
+02230,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.5603794,-135.3382787,61.18193792,-149.8028783
+02230,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.5603794,-135.3382787,61.18978905,-149.8189332
+02230,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.5603794,-135.3382787,48.77231769,-122.4747356
+02230,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.5603794,-135.3382787,48.00005922,-122.2080068
+02230,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",59.5603794,-135.3382787,47.60415599,-122.3235705
+02240,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.880668605705566,-144.4364004625,48.77231769,-122.4747356
+02240,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.880668605705566,-144.4364004625,48.00005922,-122.2080068
+02240,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",63.880668605705566,-144.4364004625,47.60415599,-122.3235705
+02275,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",56.1807793,-132.0267878,48.77231769,-122.4747356
+02275,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",56.1807793,-132.0267878,48.00005922,-122.2080068
+02275,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",56.1807793,-132.0267878,47.60415599,-122.3235705
+02275,6940010,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",56.1807793,-132.0267878,61.18193792,-149.8028783
+02275,6940020,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",56.1807793,-132.0267878,61.18978905,-149.8189332
+02164,6940020,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",58.10850669999999,-156.4134134,61.18978905,-149.8189332
+02164,6940010,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",58.10850669999999,-156.4134134,61.18193792,-149.8028783
+02164,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.10850669999999,-156.4134134,48.77231769,-122.4747356
+02164,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.10850669999999,-156.4134134,48.00005922,-122.2080068
+02164,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",58.10850669999999,-156.4134134,47.60415599,-122.3235705
+02290,6940020,inf,,,65.47329521958916,-152.37081955411765,61.18978905,-149.8189332
+02290,6940010,inf,,,65.47329521958916,-152.37081955411765,61.18193792,-149.8028783
+02290,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",65.47329521958916,-152.37081955411765,48.77231769,-122.4747356
+02290,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",65.47329521958916,-152.37081955411765,48.00005922,-122.2080068
+02290,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",65.47329521958916,-152.37081955411765,47.60415599,-122.3235705
+02282,6940010,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",60.017507900000005,-140.4168465,61.18193792,-149.8028783
+02282,6940020,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",60.017507900000005,-140.4168465,61.18978905,-149.8189332
+02282,6910001,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.017507900000005,-140.4168465,48.77231769,-122.4747356
+02282,6910004,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.017507900000005,-140.4168465,48.00005922,-122.2080068
+02282,6910610,inf,400,"{""error_code"":154,""error"":""Path distance exceeds the max distance limit: 600000 meters"",""status_code"":400,""status"":""Bad Request""}",60.017507900000005,-140.4168465,47.60415599,-122.3235705
+04001,6860021,inf,,,35.566378463640355,-109.41020039359312,35.20901918,-111.644956
+04001,6850037,inf,,,35.566378463640355,-109.41020039359312,35.08753372,-106.6164169
+04001,6860325,inf,,,35.566378463640355,-109.41020039359312,33.66599832,-112.1171721
+04001,6860376,inf,,,35.566378463640355,-109.41020039359312,33.48771012,-111.9238381
+04001,6860253,inf,,,35.566378463640355,-109.41020039359312,33.56781116,-112.0711452
+04005,6860376,inf,,,35.4867983109008,-111.60383838988427,33.48771012,-111.9238381
+04025,6860021,inf,,,34.62472490519278,-112.2907557994084,35.20901918,-111.644956
+04025,6860028,inf,,,34.62472490519278,-112.2907557994084,33.29862985,-111.8751469
+04025,6860013,inf,,,34.62472490519278,-112.2907557994084,33.61069571,-112.1803858
+04025,6860027,inf,,,34.62472490519278,-112.2907557994084,33.4643091,-112.3536495
+04025,6860016,inf,,,34.62472490519278,-112.2907557994084,33.38922693,-111.8747246
+04025,6860250,inf,,,34.62472490519278,-112.2907557994084,33.46565458,-112.0594905
+04025,6860280,inf,,,34.62472490519278,-112.2907557994084,33.4803646,-112.0786106
+04025,6860325,inf,,,34.62472490519278,-112.2907557994084,33.66599832,-112.1171721
+04025,6860253,inf,,,34.62472490519278,-112.2907557994084,33.56781116,-112.0711452
+04025,6860210,inf,,,34.62472490519278,-112.2907557994084,33.4801919,-112.0418854
+04025,6860255,inf,,,34.62472490519278,-112.2907557994084,33.45849958,-112.0249903
+04025,6860376,inf,,,34.62472490519278,-112.2907557994084,33.48771012,-111.9238381
+13053,6530373,inf,,,32.337907385811526,-84.8860469757073,31.21566695,-85.36144699
+13053,6530705,inf,,,32.337907385811526,-84.8860469757073,32.32720595,-86.27608666
+13053,6380110,inf,,,32.337907385811526,-84.8860469757073,33.76313902,-84.37397395
+13053,6380140,inf,,,32.337907385811526,-84.8860469757073,33.79520471,-84.32116361
+13053,6380130,inf,,,32.337907385811526,-84.8860469757073,33.75421081,-84.3803954
+13053,6380490,inf,,,32.337907385811526,-84.8860469757073,33.90781564,-84.35491361
+13053,6380285,inf,,,32.337907385811526,-84.8860469757073,33.8582379,-84.6005612
+13053,6380430,inf,,,32.337907385811526,-84.8860469757073,32.48133317,-84.98308867
+13053,6380325,inf,,,32.337907385811526,-84.8860469757073,33.9630741,-84.0176751
+13053,6380730,inf,,,32.337907385811526,-84.8860469757073,32.83311962,-83.63629049
+13053,6380775,inf,,,32.337907385811526,-84.8860469757073,33.96868088,-84.55030552
+13053,6380995,inf,,,32.337907385811526,-84.8860469757073,34.06232079,-84.32042202

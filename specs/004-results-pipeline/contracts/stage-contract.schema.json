@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://burncare-equity/specs/004-results-pipeline/contracts/stage-contract.schema.json",
+  "title": "Stage Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_id",
+    "name",
+    "question",
+    "description",
+    "replaces_notebooks",
+    "required_inputs",
+    "produced_datasets",
+    "produced_tables",
+    "produced_figures",
+    "produced_findings",
+    "validations"
+  ],
+  "properties": {
+    "stage_id": {
+      "type": "string",
+      "pattern": "^(0[0-9]|10)$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "question": {
+      "type": "string",
+      "minLength": 10
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10
+    },
+    "replaces_notebooks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "produced_datasets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "produced_tables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "produced_figures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "produced_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "validations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

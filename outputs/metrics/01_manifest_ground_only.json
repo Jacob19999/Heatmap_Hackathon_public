@@ -1,0 +1,70 @@
+{
+  "run_id": "stage01",
+  "profile": "full",
+  "created_at": "2026-03-16T23:59:10.864784+00:00",
+  "artifacts": [
+    {
+      "artifact_id": "01_dataset_facilities_geo",
+      "stage_id": "01",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\facilities_geo.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_dataset_county_den",
+      "stage_id": "01",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\county_denominators.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_dataset_tract_den",
+      "stage_id": "01",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\tract_denominators.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_table_join_quality",
+      "stage_id": "01",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\01_tables_join_quality_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_table_ruca_summary",
+      "stage_id": "01",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\01_tables_ruca_summary_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_figure_rural_urban",
+      "stage_id": "01",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\01_figures_rural_urban_mix_ground_only.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "01_finding",
+      "stage_id": "01",
+      "artifact_type": "finding",
+      "path": "outputs\\metrics\\01_findings_ground_only.json",
+      "format": "json",
+      "artifact_role": "",
+      "scenario_id": null
+    }
+  ]
+}

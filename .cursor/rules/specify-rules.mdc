@@ -1,0 +1,47 @@
+﻿---
+description: Project Development Guidelines
+globs: ["**/*"]
+alwaysApply: true
+---
+# Heatmap_Hackathon Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-03-16
+
+## Active Technologies
+- Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, esda, libpysal, matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests (001-phase1-bei-analytics)
+- Local files under `Data/` using Parquet, GeoJSON, CSV, and a JSON presentation manifest (001-phase1-bei-analytics)
+- Local files under `Data/` using Parquet, GeoJSON, CSV, and JSON manifest files (001-phase1-bei-analytics)
+- Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, PySAL (`esda`, `libpysal`), matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests (001-phase1-bei-analytics)
+- Local files (`parquet`, `geojson`, JSON manifests, Excel inputs) (001-phase1-bei-analytics)
+- Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, PySAL (esda, libpysal), matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests, pyarrow, tqdm, cenpy (001-phase1-bei-analytics)
+- File-based (Parquet tables, GeoJSON, Excel/CSV for NIRD and external data) (001-phase1-bei-analytics)
+- Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, esda, libpysal, matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests, pyarrow, tqdm, cenpy (004-results-pipeline)
+- File-based artifacts (Excel/CSV inputs, Parquet/GeoJSON/CSV outputs, JSON/Markdown manifests) (004-results-pipeline)
+- Python 3.11+ + pandas, geopandas, pyarrow/parquet IO, typer CLI, json/jsonschema-style contract validation, existing project analytics stack from the workspace rules (005-powerbi-csv-exports)
+- File-based artifacts under `Data/` using Parquet, GeoJSON, JSON, CSV, Markdown, and Excel inputs (005-powerbi-csv-exports)
+
+- Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, PySAL (esda + libpysal), matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests (001-phase1-bei-analytics)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+cd src; pytest; ruff check .
+
+## Code Style
+
+Python 3.11+: Follow standard conventions
+
+## Recent Changes
+- 005-powerbi-csv-exports: Added Python 3.11+ + pandas, geopandas, pyarrow/parquet IO, typer CLI, json/jsonschema-style contract validation, existing project analytics stack from the workspace rules
+- 004-results-pipeline: Added Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, esda, libpysal, matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests, pyarrow, tqdm, cenpy
+- 001-phase1-bei-analytics: Added Python 3.11+ + pandas, geopandas, numpy, scipy, scikit-learn, hdbscan, PySAL (esda, libpysal), matplotlib, seaborn, plotly, folium, openpyxl, shapely, requests, pyarrow, tqdm, cenpy
+
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

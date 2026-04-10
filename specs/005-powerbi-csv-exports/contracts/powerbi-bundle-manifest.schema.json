@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://burncare-equity/specs/005-powerbi-csv-exports/contracts/powerbi-bundle-manifest.schema.json",
+  "title": "Power BI Final Bundle Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bundle_id",
+    "created_at",
+    "bundle_root",
+    "default_scenario",
+    "exports"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "bundle_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "default_scenario": {
+      "type": "string",
+      "enum": [
+        "ground_only",
+        "ground_plus_air"
+      ]
+    },
+    "source_profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_signature",
+        "export_set_signature",
+        "schema_signature",
+        "allowed_variable_metadata"
+      ],
+      "properties": {
+        "input_signature": {
+          "type": "string",
+          "minLength": 6
+        },
+        "export_set_signature": {
+          "type": "string",
+          "minLength": 6
+        },
+        "schema_signature": {
+          "type": "string",
+          "minLength": 6
+        },
+        "allowed_variable_metadata": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "exports": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "export_id",
+          "export_name",
+          "artifact_role",
+          "result_area",
+          "scenario_id",
+          "row_grain",
+          "path",
+          "format",
+          "column_names",
+          "source_artifacts"
+        ],
+        "properties": {
+          "export_id": {
+            "type": "string",
+            "minLength": 6
+          },
+          "export_name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "artifact_role": {
+            "type": "string",
+            "enum": [
+              "metrics",
+              "map_join",
+              "summary",
+              "robustness",
+              "traceability"
+            ]
+          },
+          "result_area": {
+            "type": "string",
+            "enum": [
+              "distribution",
+              "travel_burden",
+              "pediatric_access",
+              "structural_capacity",
+              "scenario_sensitivity",
+              "composite_hotspots",
+              "cross_cutting"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "enum": [
+              "ground_only",
+              "ground_plus_air",
+              "not_applicable"
+            ]
+          },
+          "row_grain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "pattern": "\\.csv$"
+          },
+          "format": {
+            "type": "string",
+            "const": "csv"
+          },
+          "column_names": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "row_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_artifacts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "plain_language_purpose": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

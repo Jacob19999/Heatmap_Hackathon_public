@@ -1,0 +1,8 @@
+{
+  "stage_id": "04",
+  "question": "How does pediatric burn access compare to adult access in Minnesota?",
+  "finding": "Pediatric burn access (3rd-nearest center proxy): median 69 min vs adult 72 min. Children face longer travel to specialized care.",
+  "why_it_matters": "Pediatric burn patients require specialized centers; fewer options mean longer transfers.",
+  "action_implication": "Ensure pediatric burn protocols include pre-arranged transfer agreements for rural communities.",
+  "scenario_id": "ground_only"
+}

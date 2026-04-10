@@ -1,0 +1,8 @@
+{
+  "stage_id": "08",
+  "question": "Where are the highest-burden burn equity hotspots in Minnesota?",
+  "finding": "151 tracts in the top 10% BEI tier, affecting 456,274 residents. All top-20 hotspots are rural. Supply scarcity and capacity gaps are the dominant drivers.",
+  "why_it_matters": "Identifying hotspots enables targeted investment to reduce the sharpest inequities.",
+  "action_implication": "Direct capacity expansion and transport network investments to the highest-BEI rural tracts.",
+  "scenario_id": "ground_only"
+}

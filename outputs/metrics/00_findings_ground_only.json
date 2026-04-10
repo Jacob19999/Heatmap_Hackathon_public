@@ -1,0 +1,8 @@
+{
+  "stage_id": "00",
+  "question": "Is the NIRD data standardized and trustworthy?",
+  "finding": "Ingested 635 facilities from full NIRD: 136 definitive burn centers, 460 stabilization sites across all 50 states.",
+  "why_it_matters": "A clean, classified facility base is critical for accurate spatial equity analysis.",
+  "action_implication": "Use the classified facility registry as the canonical source for all downstream supply and access metrics.",
+  "scenario_id": "ground_only"
+}

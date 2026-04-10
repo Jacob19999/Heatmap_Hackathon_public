@@ -1,0 +1,8 @@
+{
+  "stage_id": "03",
+  "question": "What is the ground travel burden to reach a burn center in Minnesota?",
+  "finding": "Median travel: 19 min urban, 124 min rural (105-minute gap). Only 52% of MN population within 30 min of a burn center.",
+  "why_it_matters": "A 100+ minute rural-urban gap reveals a structural access desert affecting nearly half a million Minnesotans.",
+  "action_implication": "Prioritize transfer network optimization and consider mobile stabilization assets in high-burden rural tracts.",
+  "scenario_id": "ground_only"
+}

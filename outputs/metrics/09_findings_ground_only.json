@@ -1,0 +1,8 @@
+{
+  "stage_id": "09",
+  "question": "What are the final story-ready artifacts and one-line findings?",
+  "finding": "Final bundle assembled: figure and table manifests, one-line findings summary, method notes, deck_ready/map_ready/metrics_ready exports.",
+  "why_it_matters": "Judge-ready deliverables require traceable artifacts and plain-language findings.",
+  "action_implication": "Use final_bundle for submission and validation.",
+  "scenario_id": "ground_only"
+}

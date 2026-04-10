@@ -1,0 +1,64 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-03-15T15:12:45.684324+00:00",
+  "profile": {
+    "id": "mn_mvp",
+    "display_name": "Minnesota MVP",
+    "scope_level": "state",
+    "output_prefix": "mn_mvp",
+    "origin_state_fips": [
+      "27"
+    ],
+    "destination_region": [
+      "MN",
+      "ND",
+      "SD",
+      "IA",
+      "WI"
+    ],
+    "notes": "Minnesota-only presentation scope for hackathon MVP. Uses national ingestion/routing but exports MN-focused outputs with regional cross-border destinations preserved for border tracts."
+  },
+  "scenarios": {
+    "default": "ground_only",
+    "enabled": [
+      "ground_only"
+    ]
+  },
+  "assets": {
+    "tract": {
+      "ground_only": {
+        "table": "tables\\mn_mvp_tract_bei.parquet",
+        "access_table": "tables\\mn_mvp_tract_access.parquet"
+      }
+    }
+  },
+  "facility_assets": {},
+  "methodology": {
+    "data_sources": [
+      "NIRD (hospital infrastructure)",
+      "ACS 5-year 2022 (population, child population)",
+      "TIGER/Line 2022 (tract geometry)",
+      "RUCA (rurality classification)"
+    ],
+    "limitations": [
+      "Minnesota-only tract origins; destinations limited to Minnesota plus nearby states.",
+      "Ground-only travel scenario; air-access sensitivity is not included in this MVP manifest."
+    ],
+    "scope_note": "MN MVP presentation build scoped to Minnesota tracts with regional cross-border destinations; uses ground-only access and BEI outputs."
+  },
+  "ui_defaults": {
+    "geography_level": "tract",
+    "metric": "bei",
+    "map_center": [
+      46.0,
+      -94.0
+    ],
+    "map_zoom": 6.0,
+    "narrative_order": [
+      "burn_center_distribution",
+      "rural_urban_travel_burden",
+      "pediatric_access",
+      "burn_bed_capacity"
+    ]
+  }
+}

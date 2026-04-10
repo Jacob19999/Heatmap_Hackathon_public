@@ -1,0 +1,8 @@
+{
+  "stage_id": "01",
+  "question": "Where are facilities and denominators anchored geographically?",
+  "finding": "Geocoded 635 of 635 facilities. Joined 84,415 tracts: 67,695 urban, 16,720 rural.",
+  "why_it_matters": "Geography and rurality stratification are foundational for identifying access deserts.",
+  "action_implication": "Use RUCA-based rural/urban classification consistently across all pillar analyses.",
+  "scenario_id": "ground_only"
+}

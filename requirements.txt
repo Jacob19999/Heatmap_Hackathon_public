@@ -1,0 +1,31 @@
+# BEI Analytics Pipeline — Phase 1
+# Python 3.11+
+
+# Core data
+pandas>=2.0
+geopandas>=0.14
+numpy>=1.24
+scipy>=1.11
+openpyxl>=3.1
+pyarrow>=14.0
+shapely>=2.0
+
+# Spatial / stats
+scikit-learn>=1.3
+hdbscan>=0.8
+esda>=2.5
+libpysal>=4.9
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.18
+folium>=0.15
+
+# I/O and utilities
+requests>=2.31
+tqdm>=4.66
+cenpy>=0.1.0
+
+# Testing
+pytest>=7.4

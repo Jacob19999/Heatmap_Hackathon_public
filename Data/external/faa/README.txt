@@ -1,0 +1,1 @@
+FAA airport/heliport data: Download from https://adip.faa.gov/agis/portal/ or https://catalog.data.faa.gov/ and place CSV/export here.

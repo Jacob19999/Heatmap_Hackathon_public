@@ -1,0 +1,28 @@
+origin_id,destination_id,duration_min,valhalla_status_code,valhalla_error,origin_lat,origin_lon,destination_lat,destination_lon
+15001,6950405,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",19.663907829833352,-155.44118531895552,21.30253573,-157.8515097
+15001,6950380,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",19.663907829833352,-155.44118531895552,21.30764843,-157.8551109
+15001,6950410,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",19.663907829833352,-155.44118531895552,21.35601109,-157.8938962
+15005,6950380,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",21.176667499999997,-156.9657475,21.30764843,-157.8551109
+15005,6950410,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",21.176667499999997,-156.9657475,21.35601109,-157.8938962
+15005,6950405,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",21.176667499999997,-156.9657475,21.30253573,-157.8515097
+15007,6950410,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",22.030911375690714,-159.44146006593027,21.35601109,-157.8938962
+15007,6950380,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",22.030911375690714,-159.44146006593027,21.30764843,-157.8551109
+15007,6950405,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",22.030911375690714,-159.44146006593027,21.30253573,-157.8515097
+15009,6950405,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",20.862932620440024,-156.49023797648712,21.30253573,-157.8515097
+15009,6950380,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",20.862932620440024,-156.49023797648712,21.30764843,-157.8551109
+15009,6950410,inf,400,"{""error_code"":170,""error"":""Locations are in unconnected regions. Go check\/edit the map at osm.org"",""status_code"":400,""status"":""Bad Request""}",20.862932620440024,-156.49023797648712,21.35601109,-157.8938962
+16003,6820040,inf,,,44.90666318333334,-116.43450915555555,43.61380122,-116.2537096
+16003,6820084,inf,,,44.90666318333334,-116.43450915555555,43.61249998,-116.1926974
+16003,6810430,inf,,,44.90666318333334,-116.43450915555555,46.87394115,-113.9999875
+16015,6820084,inf,,,43.903920568459476,-115.80912308399283,43.61249998,-116.1926974
+16015,6820040,inf,,,43.903920568459476,-115.80912308399283,43.61380122,-116.2537096
+16015,6820005,inf,,,43.903920568459476,-115.80912308399283,42.8713232,-112.4180217
+16063,6820005,inf,,,42.9907824,-114.1530888,42.8713232,-112.4180217
+16063,6820084,inf,,,42.9907824,-114.1530888,43.61249998,-116.1926974
+16063,6820165,inf,,,42.9907824,-114.1530888,43.4701875,-111.9903191
+16073,6820040,inf,,,43.22940557520551,-116.66794658153283,43.61380122,-116.2537096
+16073,6820084,inf,,,43.22940557520551,-116.66794658153283,43.61249998,-116.1926974
+16073,6820005,inf,,,43.22940557520551,-116.66794658153283,42.8713232,-112.4180217
+16085,6820084,inf,,,44.86950388863906,-115.80327263328826,43.61249998,-116.1926974
+16085,6820040,inf,,,44.86950388863906,-115.80327263328826,43.61380122,-116.2537096
+16085,6810430,inf,,,44.86950388863906,-115.80327263328826,46.87394115,-113.9999875

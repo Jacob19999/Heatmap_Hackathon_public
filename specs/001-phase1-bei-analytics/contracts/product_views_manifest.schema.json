@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://heatmap-hackathon.local/contracts/product_views_manifest.schema.json",
+  "title": "Product Views Manifest",
+  "description": "Top-level frontend contract for published dashboard tabs/views.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "generated_at",
+    "product_name",
+    "views"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "views": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view_id",
+          "label",
+          "detail_level",
+          "dataset_profile_id",
+          "manifest_path",
+          "default_metric",
+          "default_geography_level"
+        ],
+        "properties": {
+          "view_id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "detail_level": {
+            "type": "string",
+            "enum": ["high", "low"]
+          },
+          "dataset_profile_id": {
+            "type": "string"
+          },
+          "manifest_path": {
+            "type": "string"
+          },
+          "default_metric": {
+            "type": "string"
+          },
+          "default_geography_level": {
+            "type": "string",
+            "enum": ["tract", "county", "state"]
+          },
+          "badge_text": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

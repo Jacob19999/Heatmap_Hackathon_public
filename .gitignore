@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Data (large external; keep structure)
+# Data/external/* kept in repo or .gitkeep; large OSM/OSRM can be ignored
+*.osm.pbf
+Data/external/osrm/us-latest.osm.pbf
+*.log*
+
+# Valhalla (routing tiles and build artifacts)
+Data/external/osrm/valhalla_tiles/
+Data/external/osrm/valhalla.json
+
+# Environment
+.env
+.env.*
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Ruff / Linting
+.ruff_cache/
+Data/output/tables/air_ground_to_launch.parquet
+
+# Next.js / frontend
+src/frontend/.next/
+src/frontend/node_modules/
+src/frontend/npm-debug.log*
+src/frontend/yarn-debug.log*
+src/frontend/yarn-error.log*
+src/frontend/.turbo/
+src/frontend/.vercel/

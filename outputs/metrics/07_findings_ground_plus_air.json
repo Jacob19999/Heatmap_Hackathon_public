@@ -1,0 +1,8 @@
+{
+  "stage_id": "07",
+  "question": "How sensitive are access results to conditional air transport?",
+  "finding": "Stage 07 produced scenario-labeled outputs for scenario_id=ground_plus_air. Ground-only baseline artifacts are not modified by this stage.",
+  "why_it_matters": "Air transport is a scenario/sensitivity layer only; baseline remains ground-only for comparability.",
+  "action_implication": "Use air sensitivity outputs only when scenario is ground_plus_air; do not overwrite ground-only deliverables.",
+  "scenario_id": "ground_plus_air"
+}

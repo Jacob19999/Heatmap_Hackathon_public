@@ -1,0 +1,58 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-03-16T23:26:40.241223+00:00",
+  "profile": {
+    "id": "usa_low_detail_county",
+    "display_name": "USA Low Detail (County)",
+    "scope_level": "national",
+    "output_prefix": "usa_low_detail_county",
+    "origin_state_fips": [],
+    "destination_region": [],
+    "notes": "National county-level low-detail presentation scope. Uses national BEI and access outputs aggregated to counties for fast national views."
+  },
+  "scenarios": {
+    "default": "ground_only",
+    "enabled": [
+      "ground_only",
+      "ground_plus_air"
+    ]
+  },
+  "assets": {
+    "county": {
+      "ground_only": {
+        "table": "tables\\usa_low_detail_county_county_bei.parquet",
+        "access_table": "tables\\usa_low_detail_county_county_access.parquet",
+        "geojson": "geojson\\usa_low_detail_county_county_bei.geojson"
+      }
+    }
+  },
+  "facility_assets": {},
+  "methodology": {
+    "data_sources": [
+      "NIRD (hospital infrastructure)",
+      "ACS 5-year 2022 (population)",
+      "TIGER/Line 2022 (county centroids)",
+      "Valhalla (county centroid \u2192 hospital travel times)"
+    ],
+    "limitations": [
+      "County-level origins (population-weighted centroids); national destinations.",
+      "Ground-only travel scenario."
+    ],
+    "scope_note": "USA low-detail county presentation from county\u2013hospital matrix."
+  },
+  "ui_defaults": {
+    "geography_level": "county",
+    "metric": "bei",
+    "map_center": [
+      39.5,
+      -98.35
+    ],
+    "map_zoom": 4.0,
+    "narrative_order": [
+      "burn_center_distribution",
+      "rural_urban_travel_burden",
+      "pediatric_access",
+      "burn_bed_capacity"
+    ]
+  }
+}

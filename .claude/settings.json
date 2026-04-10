@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash('C:\\\\Users\\\\tngzj\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\Scripts\\\\python' -c ':*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(where pdflatex:*)",
+      "Bash(where xelatex:*)",
+      "Bash(where lualatex:*)"
+    ]
+  }
+}

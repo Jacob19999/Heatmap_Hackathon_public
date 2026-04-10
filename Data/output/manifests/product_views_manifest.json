@@ -1,0 +1,29 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-03-16T23:26:40.244235+00:00",
+  "product_name": "Burn Care Equity Intelligence Platform",
+  "views": [
+    {
+      "view_id": "mn_high_detail_tab",
+      "label": "Minnesota \u2013 High Detail",
+      "detail_level": "high",
+      "dataset_profile_id": "mn_high_detail",
+      "manifest_path": "manifests\\mn_high_detail_manifest.json",
+      "default_metric": "bei",
+      "default_geography_level": "tract",
+      "badge_text": "High Detail",
+      "description": "Tract-level Burn Equity Index and access patterns for Minnesota."
+    },
+    {
+      "view_id": "usa_low_detail_county_tab",
+      "label": "USA \u2013 Low Detail (County)",
+      "detail_level": "low",
+      "dataset_profile_id": "usa_low_detail_county",
+      "manifest_path": "manifests\\usa_low_detail_county_manifest.json",
+      "default_metric": "bei",
+      "default_geography_level": "county",
+      "badge_text": "Low Detail",
+      "description": "County-level Burn Equity Index for a fast national overview."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+profile: mvp
+scenario: ground_only
+project_root: .
+
+data:
+  nird_path: Data/NIRD 20230130 Database_Hackathon_sample.xlsx
+  interim_dir: data/interim
+  processed_dir: data/processed
+  cache_dir: data/cache
+  external:
+    acs_tract: Data/external/acs/acs_2022_5yr_tract_b01003_b09001.csv
+    geocode_results: Data/output/tables/GeocodeResults.csv
+    ruca: Data/external/ruca/RUCA-codes-2020-tract.xlsx
+    svi: Data/external/svi/SVI_2022_US.csv
+    tiger_dir: Data/external/tiger
+
+outputs:
+  tables_dir: outputs/tables
+  figures_dir: outputs/figures
+  metrics_dir: outputs/metrics
+  final_bundle_dir: outputs/final_bundle
+
+routing:
+  km_per_minute: 0.8
+  transfer_penalty_minutes: 45
+
+validation:
+  strict_geography: true
+
+logging:
+  level: INFO
+

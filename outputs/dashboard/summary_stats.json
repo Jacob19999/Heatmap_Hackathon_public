@@ -1,0 +1,21 @@
+{
+  "mn": {
+    "tracts": 1505,
+    "pop": 5695292,
+    "rural_pct": 30.5,
+    "bei_median": 23.0,
+    "bei_mean": 32.9,
+    "high_burden_tracts": 155,
+    "pct_30min": 50.1,
+    "rural_median_min": 124.0,
+    "urban_median_min": 19.0
+  },
+  "usa": {
+    "counties": 3144,
+    "pop": 331097593,
+    "facilities": 635,
+    "burn_centers": 136,
+    "burn_beds": 2080,
+    "states": 51
+  }
+}

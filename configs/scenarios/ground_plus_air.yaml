@@ -1,0 +1,8 @@
+# Air sensitivity scenario: conditional air transport.
+scenario: ground_plus_air
+air_assumptions:
+  enabled: true
+  air_cap_minutes: 60
+  air_speed_factor: 0.4
+routing:
+  transfer_penalty_minutes: 45

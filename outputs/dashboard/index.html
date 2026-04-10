@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burn Equity Index — Challenge Area 3 Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.getElementById('page-methodology'),{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+<style>
+:root{
+  --bg:#0F1923;--card:#1A2634;--border:#2A3A4A;--text:#E8ECF1;--muted:#8899AA;
+  --accent:#E85D04;--accent2:#F48C06;--green:#1a9850;--red:#d73027;
+  --bei-grad:linear-gradient(to right,#1a9850,#66bd63,#a6d96a,#d9ef8b,#fee08b,#fdae61,#f46d43,#d73027,#a50026);
+  --font:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow:hidden;height:100vh}
+
+/* Navigation */
+.nav{display:flex;align-items:center;gap:0;background:#0A1218;border-bottom:1px solid var(--border);height:52px;padding:0 20px}
+.nav-brand{font-size:16px;font-weight:700;color:var(--accent);margin-right:32px;white-space:nowrap}
+.nav-brand span{color:var(--text);font-weight:400}
+.nav-tab{padding:14px 22px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;transition:all .15s}
+.nav-tab:hover{color:var(--text)}
+.nav-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* Pages */
+.page{display:none;height:calc(100vh - 52px)}
+.page.active{display:block}
+#page-overview,#page-methodology,#page-limitations,#page-credits{overflow-y:auto}
+#page-mn.active,#page-usa.active{display:flex;flex-direction:column}
+
+/* Overview */
+.overview{padding:28px 32px;overflow-y:auto}
+.overview h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.overview .subtitle{color:var(--muted);font-size:14px;margin-bottom:24px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px}
+.stat-card .label{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:6px}
+.stat-card .value{font-size:28px;font-weight:700}
+.stat-card .value.accent{color:var(--accent)}
+.stat-card .value.green{color:var(--green)}
+.stat-card .value.red{color:var(--red)}
+.stat-card .detail{font-size:12px;color:var(--muted);margin-top:4px}
+.section-title{font-size:18px;font-weight:600;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.figures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px;margin-bottom:28px}
+.fig-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .15s}
+.fig-card:hover{transform:translateY(-2px)}
+.fig-card img{width:100%;height:auto;display:block}
+.fig-card .caption{padding:12px 16px 4px;font-size:13px;font-weight:600}
+.fig-card .fig-summary{padding:0 16px 14px;font-size:12px;line-height:1.5;color:var(--muted)}
+
+/* Map pages */
+.map-page{display:flex;flex-direction:row;height:100%}
+.map-container{flex:1;position:relative}
+.map-container .leaflet-container{height:100%;width:100%;background:#0F1923}
+.sidebar{width:340px;background:var(--card);border-left:1px solid var(--border);overflow-y:auto;flex-shrink:0}
+.sidebar-header{padding:16px 20px;border-bottom:1px solid var(--border)}
+.sidebar-header h3{font-size:15px;font-weight:600;margin-bottom:2px}
+.sidebar-header p{font-size:12px;color:var(--muted)}
+.sidebar-section{padding:16px 20px;border-bottom:1px solid var(--border)}
+.sidebar-section h4{font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:10px}
+.pillar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.pillar-bar-bg{flex:1;height:8px;background:#1A2634;border-radius:4px;overflow:hidden}
+.pillar-bar{height:100%;border-radius:4px;transition:width .3s}
+.pillar-label{font-size:12px;width:70px;flex-shrink:0}
+.pillar-val{font-size:12px;width:35px;text-align:right;flex-shrink:0;color:var(--muted)}
+.info-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.info-row .info-label{color:var(--muted)}
+.info-row .info-value{font-weight:600}
+.bei-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:13px;font-weight:700}
+.layer-toggle{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;cursor:pointer}
+.layer-toggle input{accent-color:var(--accent)}
+.legend{padding:16px 20px}
+.legend h4{font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px}
+.legend-bar{height:14px;border-radius:4px;background:var(--bei-grad);margin-bottom:4px}
+.legend-ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:2px;padding:0 2px}
+.legend-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.chart-container{padding:16px 20px}
+.chart-container canvas{max-height:180px}
+
+/* Methodology */
+.methodology{padding:32px 40px;overflow-y:auto;max-width:960px;margin:0 auto;flex:1;min-height:0}
+.methodology h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.methodology .subtitle{color:var(--muted);font-size:14px;margin-bottom:32px}
+.meth-section{margin-bottom:36px}
+.meth-section h2{font-size:19px;font-weight:600;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.meth-section p{font-size:14px;line-height:1.75;color:#C8CED6;margin-bottom:10px}
+.meth-formula{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px 24px;margin:14px 0;overflow-x:auto;text-align:center;font-size:16px}
+.meth-scale{margin:18px 0}
+.meth-scale-bar{height:16px;border-radius:8px;background:var(--bei-grad)}
+.meth-scale-labels{display:flex;justify-content:space-between;font-size:12px;margin-top:6px}
+.meth-scale-labels .good{color:var(--green)}
+.meth-scale-labels .mid{color:var(--muted)}
+.meth-scale-labels .bad{color:var(--red)}
+
+.pillar-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0}
+.pillar-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px}
+.pillar-card p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+.pillar-card-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.pillar-card-header strong{font-size:14px;display:block}
+.pillar-weight{font-size:11px;color:var(--muted);display:block;margin-top:1px}
+.pillar-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;font-weight:700;font-size:15px;color:#0F1923;flex-shrink:0}
+.pillar-icon.inline{width:26px;height:26px;font-size:13px;border-radius:6px;vertical-align:middle;margin-right:6px;position:relative;top:-1px}
+
+.meth-steps{display:flex;flex-direction:column;gap:12px;margin:14px 0}
+.meth-step{display:flex;gap:14px;align-items:flex-start}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.meth-step div:last-child{font-size:14px;line-height:1.65;color:#C8CED6;padding-top:4px}
+
+.meth-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.meth-table th{text-align:left;padding:10px 14px;background:#141E28;color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+.meth-table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.meth-table tr:last-child td{border-bottom:none}
+.meth-table tbody tr:hover{background:rgba(232,93,4,.04)}
+
+.interp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+.interp-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px}
+.interp-card h3{font-size:15px;font-weight:600;margin-bottom:10px}
+.interp-card ul{list-style:none;padding:0}
+.interp-card li{font-size:13px;line-height:1.8;color:#C8CED6;padding-left:18px;position:relative}
+.interp-card li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%}
+.interp-card.high h3{color:var(--red)}
+.interp-card.high li::before{background:var(--red)}
+.interp-card.low h3{color:var(--green)}
+.interp-card.low li::before{background:var(--green)}
+
+/* Credits */
+.credits{padding:48px 40px;max-width:800px;margin:0 auto;text-align:center}
+.credits h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.credits .subtitle{color:var(--muted);font-size:14px;margin-bottom:40px}
+.credits-section{margin-bottom:40px}
+.credits-section h2{font-size:16px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:20px}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:0 auto}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px 20px;transition:transform .15s,border-color .15s}
+.team-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.team-card .avatar{width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin:0 auto 14px}
+.team-card .name{font-size:15px;font-weight:600;margin-bottom:4px}
+.team-card .role{font-size:12px;color:var(--muted)}
+.team-card.lead{border-color:var(--accent);border-width:2px}
+.team-card.lead .avatar{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.org-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;display:inline-block;margin-top:8px}
+.org-card .org-name{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:6px}
+.org-card .org-desc{font-size:13px;color:var(--muted)}
+.credits-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.active{display:flex}
+.lightbox img{max-width:92vw;max-height:92vh;border-radius:8px}
+
+/* Leaflet overrides */
+.leaflet-control-zoom a{background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important}
+.leaflet-popup-content-wrapper{background:var(--card);color:var(--text);border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.leaflet-popup-tip{background:var(--card)}
+.leaflet-popup-content{font-family:var(--font);font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">BEI <span>Dashboard</span></div>
+  <button class="nav-tab active" data-page="overview">Overview</button>
+  <button class="nav-tab" data-page="mn">Minnesota</button>
+  <button class="nav-tab" data-page="usa">National</button>
+  <button class="nav-tab" data-page="methodology">Methodology</button>
+  <button class="nav-tab" data-page="limitations">Limitations</button>
+  <button class="nav-tab" data-page="credits">Credits</button>
+</nav>
+
+<!-- ===================== OVERVIEW ===================== -->
+<div class="page active" id="page-overview">
+<div class="overview">
+  <h1>Burn Equity Index — Challenge Area 3</h1>
+  <p class="subtitle">Assessing structural burn-care access inequity across Minnesota and the United States</p>
+
+  <div class="stats-grid" id="stats-grid"></div>
+
+  <div class="section-title">Minnesota — Key Findings</div>
+  <div class="figures-grid" id="mn-figures"></div>
+
+  <div class="section-title">National — Key Findings</div>
+  <div class="figures-grid" id="usa-figures"></div>
+</div>
+</div>
+
+<!-- ===================== MN MAP ===================== -->
+<div class="page" id="page-mn">
+<div class="map-page">
+  <div class="map-container"><div id="mn-map" style="height:100%"></div></div>
+  <div class="sidebar" id="mn-sidebar">
+    <div class="sidebar-header">
+      <h3>Minnesota Tract View</h3>
+      <p>Click a tract to see details</p>
+    </div>
+    <div class="sidebar-section" id="mn-layers">
+      <h4>Map Layer</h4>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="bei" checked> BEI Composite</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="t_score"> Travel Burden</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="s_score"> Supply Scarcity</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="p_score"> Pediatric Gap</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="c_score"> Capacity Scarcity</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="svi_overall"> Social Vulnerability (SVI)</label>
+      <label class="layer-toggle"><input type="radio" name="mn-layer" value="is_rural"> Rural / Urban</label>
+    </div>
+    <div class="legend" id="mn-legend">
+      <h4>Legend</h4>
+      <div class="legend-bar" id="mn-legend-bar"></div>
+      <div class="legend-labels"><span id="mn-leg-lo">0 — Good</span><span id="mn-leg-mid" style="color:var(--muted)"></span><span id="mn-leg-hi">100 — Critical</span></div>
+      <div class="legend-ticks" id="mn-leg-ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+    </div>
+    <div id="mn-detail"></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== USA MAP ===================== -->
+<div class="page" id="page-usa">
+<div class="map-page">
+  <div class="map-container"><div id="usa-map" style="height:100%"></div></div>
+  <div class="sidebar" id="usa-sidebar">
+    <div class="sidebar-header">
+      <h3>National County View</h3>
+      <p>Click a county to see details</p>
+    </div>
+    <div class="sidebar-section" id="usa-layers">
+      <h4>Map Layer</h4>
+      <label class="layer-toggle"><input type="radio" name="usa-layer" value="bei" checked> BEI Composite</label>
+      <label class="layer-toggle"><input type="radio" name="usa-layer" value="t"> Travel Burden</label>
+      <label class="layer-toggle"><input type="radio" name="usa-layer" value="s"> Supply Scarcity</label>
+      <label class="layer-toggle"><input type="radio" name="usa-layer" value="c"> Capacity Scarcity</label>
+    </div>
+    <div class="legend" id="usa-legend">
+      <h4>Legend</h4>
+      <div class="legend-bar" id="usa-legend-bar"></div>
+      <div class="legend-labels"><span id="usa-leg-lo">0 — Good</span><span id="usa-leg-mid" style="color:var(--muted)"></span><span id="usa-leg-hi">100 — Critical</span></div>
+      <div class="legend-ticks" id="usa-leg-ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+    </div>
+    <div id="usa-detail"></div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== METHODOLOGY ===================== -->
+<div class="page" id="page-methodology">
+<div class="methodology">
+
+  <h1>Methodology</h1>
+  <p class="subtitle">How the Burn Equity Index is calculated and what it measures</p>
+
+  <!-- Intro -->
+  <section class="meth-section">
+    <h2>What is the Burn Equity Index?</h2>
+    <p>The Burn Equity Index (BEI) is a composite score that measures <strong>structural inequity in access to burn care</strong> for every census tract in the United States. It does not predict who will get burned or how hospitals perform day-to-day. Instead, it asks: <em>given where people live and where burn-care resources are located, how equitably is the system structured?</em></p>
+    <p>The score ranges from <strong>0 to 100</strong>. A higher score means worse structural access — more barriers stand between residents of that area and timely, specialized burn treatment.</p>
+    <div class="meth-scale">
+      <div class="meth-scale-bar"></div>
+      <div class="meth-scale-labels">
+        <span class="good">0 — Best Access</span>
+        <span class="mid">50</span>
+        <span class="bad">100 — Worst Access</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Formula -->
+  <section class="meth-section">
+    <h2>The Core Formula</h2>
+    <p>The BEI is a weighted average of four pillars, each measuring a different dimension of burn-care access. Each pillar is scored from 0 (best) to 1 (worst), and the composite is scaled to 0–100:</p>
+    <div class="meth-formula">
+      $$ \mathrm{BEI}_i = 100 \Big( 0.25\,S_i + 0.30\,T_i + 0.20\,P_i + 0.25\,C_i \Big) $$
+    </div>
+    <p>In plain terms: <em>for each census tract, we combine four gap scores — supply scarcity, travel burden, pediatric access, and bed capacity — using fixed weights that reflect their relative importance.</em></p>
+
+    <div class="pillar-cards">
+      <div class="pillar-card" style="border-left:4px solid #E9C46A">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#E9C46A">S</span>
+          <div><strong>Specialized Supply Scarcity</strong><span class="pillar-weight">Weight: 25%</span></div>
+        </div>
+        <p>How scarce is specialized burn-care supply near this area? Areas far from verified burn centers with few nearby resources score higher (worse).</p>
+      </div>
+      <div class="pillar-card" style="border-left:4px solid #E76F51">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#E76F51">T</span>
+          <div><strong>Timely Access Burden</strong><span class="pillar-weight">Weight: 30%</span></div>
+        </div>
+        <p>How long does it take to reach definitive burn care — either directly or through stabilization and transfer? This is the most heavily weighted pillar.</p>
+      </div>
+      <div class="pillar-card" style="border-left:4px solid #2a9d8f">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#2a9d8f">P</span>
+          <div><strong>Pediatric Access Gap</strong><span class="pillar-weight">Weight: 20%</span></div>
+        </div>
+        <p>How well can children in this area access burn care designed for pediatric patients? Areas without nearby pediatric-capable facilities score higher.</p>
+      </div>
+      <div class="pillar-card" style="border-left:4px solid #264653">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#264653">C</span>
+          <div><strong>Structural Capacity Gap</strong><span class="pillar-weight">Weight: 25%</span></div>
+        </div>
+        <p>Are there enough burn beds to serve the surrounding population? This measures bed-to-population ratios weighted by distance, not real-time occupancy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two-Step Float Method -->
+  <section class="meth-section">
+    <h2>How Each Pillar is Calculated</h2>
+    <p>Three of the four pillars (Supply, Pediatric, Capacity) use the same approach — a <strong>two-step floating catchment area method</strong>. This is a standard technique in health-access research. Here is how it works in plain language:</p>
+    <div class="meth-steps">
+      <div class="meth-step">
+        <div class="step-num">1</div>
+        <div>
+          <strong>Measure facility burden.</strong> For each hospital, calculate how much demand it faces by summing up the populations of all nearby tracts (weighted by how close they are). Divide the hospital's capability score by this demand. Hospitals that serve many people spread their capacity thin.
+        </div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num">2</div>
+        <div>
+          <strong>Sum accessibility for each tract.</strong> For each census tract, add up the burden-adjusted scores of all hospitals it can reach (again weighted by distance). The result is that tract's raw accessibility score.
+        </div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num">3</div>
+        <div>
+          <strong>Normalize and flip.</strong> Normalize the raw score across all tracts, then subtract from 1 so that higher values mean worse access (a "gap").
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supply Scarcity -->
+  <section class="meth-section">
+    <h2><span class="pillar-icon inline" style="background:#E9C46A">S</span> Specialized Supply Scarcity</h2>
+    <p>This pillar asks: <em>how much specialized burn-care capability exists near each tract, relative to the population competing for it?</em></p>
+    <p>Each facility receives a capability weight based on its designation:</p>
+    <table class="meth-table">
+      <thead><tr><th>Facility Type</th><th>Weight</th></tr></thead>
+      <tbody>
+        <tr><td>ABA Verified Burn Center</td><td>1.00</td></tr>
+        <tr><td>State-Designated Burn Center</td><td>0.85</td></tr>
+        <tr><td>Burn-Capable Non-Verified Center</td><td>0.50</td></tr>
+        <tr><td>Trauma-Only Stabilization Site</td><td>0.20</td></tr>
+      </tbody>
+    </table>
+    <p>The two-step floating catchment method produces a raw accessibility score. Higher raw scores mean more nearby supply. We normalize and invert it:</p>
+    <div class="meth-formula">
+      $$ S_i = 1 - \mathrm{Norm}\!\left( A_i^{(S)} \right) $$
+    </div>
+    <div class="meth-formula">
+      $$ A_i^{(S)} = \sum_{j} \frac{q_j^{(S)}}{\sum_{k}\, \mathrm{Pop}_k \; g(t_{kj})} \;\cdot\; g(t_{ij}) $$
+    </div>
+    <p>A tract with <strong>high $S_i$</strong> has little specialized burn supply nearby relative to its surrounding population.</p>
+  </section>
+
+  <!-- Timely Access -->
+  <section class="meth-section">
+    <h2><span class="pillar-icon inline" style="background:#E76F51">T</span> Timely Access Burden</h2>
+    <p>This pillar models <em>how the real burn-care system works</em>: a patient may go directly to a verified burn center, or they may first go to a closer stabilization hospital and then be transferred. The index picks whichever pathway is faster.</p>
+    <div class="meth-steps">
+      <div class="meth-step">
+        <div class="step-num">A</div>
+        <div><strong>Direct path:</strong> drive time from the tract to the nearest definitive burn center.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num">B</div>
+        <div><strong>Transfer path:</strong> drive to the nearest stabilization hospital + a fixed transfer penalty (45 min) + drive/air from that hospital to a definitive center.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num">C</div>
+        <div><strong>System time:</strong> take the minimum of the direct and transfer paths — the fastest realistic option.</div>
+      </div>
+    </div>
+    <div class="meth-formula">
+      $$ T_{i}^{\text{sys}} = \min\!\Big( T_i^{\text{dir}},\;\; T_i^{\text{trans}} \Big) $$
+    </div>
+    <p>A second term penalizes tracts where even first-line stabilization is far away (more than 30 minutes):</p>
+    <div class="meth-formula">
+      $$ \Delta_i = \max\!\big(0,\; T_i^{\text{stab}} - 30\big) $$
+    </div>
+    <p>The final travel burden score blends both:</p>
+    <div class="meth-formula">
+      $$ T_i = 0.75 \;\mathrm{Norm}\!\left(T_i^{\text{sys}}\right) + 0.25 \;\mathrm{Norm}\!\left(\Delta_i\right) $$
+    </div>
+    <p>In plain terms: 75% of the travel score comes from overall system travel time, and 25% from whether there is a stabilization hospital within 30 minutes.</p>
+  </section>
+
+  <!-- Pediatric -->
+  <section class="meth-section">
+    <h2><span class="pillar-icon inline" style="background:#2a9d8f">P</span> Pediatric Access Gap</h2>
+    <p>Children require specialized burn care. This pillar uses the same two-step method as Supply Scarcity, but focuses on <strong>pediatric-capable facilities</strong> and weights them against the <strong>child population</strong> (under 18) instead of total population.</p>
+    <table class="meth-table">
+      <thead><tr><th>Pediatric Facility Type</th><th>Weight</th></tr></thead>
+      <tbody>
+        <tr><td>Pediatric Burn Capable + ABA Verified</td><td>1.00</td></tr>
+        <tr><td>Pediatric Burn Capable + State-Designated</td><td>0.85</td></tr>
+        <tr><td>Pediatric Trauma L1/L2 + Burn-Capable</td><td>0.60</td></tr>
+        <tr><td>Pediatric Stabilization Only</td><td>0.25</td></tr>
+      </tbody>
+    </table>
+    <div class="meth-formula">
+      $$ P_i = 1 - \mathrm{Norm}\!\left( A_i^{(P)} \right) $$
+    </div>
+    <p>A tract with <strong>high $P_i$</strong> has poor access to pediatric burn care relative to the number of children living nearby.</p>
+  </section>
+
+  <!-- Capacity -->
+  <section class="meth-section">
+    <h2><span class="pillar-icon inline" style="background:#264653">C</span> Structural Capacity Gap</h2>
+    <p>This pillar measures whether there are <strong>enough burn beds</strong> to serve the surrounding population, weighted by distance. It uses each facility's reported burn-bed count, adjusted by its capability weight.</p>
+    <div class="meth-formula">
+      $$ C_i = 1 - \mathrm{Norm}\!\left( A_i^{(C)} \right) $$
+    </div>
+    <div class="meth-formula">
+      $$ A_i^{(C)} = \sum_{j} \frac{\mathrm{EffBeds}_j \;\cdot\; q_j^{(S)}}{\sum_{k}\, \mathrm{Pop}_k \; g(t_{kj})} \;\cdot\; g(t_{ij}) $$
+    </div>
+    <p>A tract with <strong>high $C_i$</strong> has poor structural access to burn-bed capacity — few beds relative to the population that needs them.</p>
+  </section>
+
+  <!-- Distance Decay -->
+  <section class="meth-section">
+    <h2>Distance Decay: How "Nearby" is Defined</h2>
+    <p>Not all facilities within reach matter equally. A hospital 10 minutes away contributes more to access than one 80 minutes away. We model this with a <strong>step-decay function</strong> based on drive time:</p>
+    <table class="meth-table">
+      <thead><tr><th>Drive Time</th><th>Weight</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>≤ 30 min</td><td>1.00</td><td>Full access — within ideal reach</td></tr>
+        <tr><td>31–60 min</td><td>0.60</td><td>Reduced access — reachable but strained</td></tr>
+        <tr><td>61–90 min</td><td>0.30</td><td>Marginal access — significant barrier</td></tr>
+        <tr><td>> 90 min</td><td>0.00</td><td>Out of effective reach</td></tr>
+      </tbody>
+    </table>
+    <p>The 60-minute mark is the primary policy threshold, consistent with national burn-care guidelines recommending transfer within one hour.</p>
+  </section>
+
+  <!-- Normalization -->
+  <section class="meth-section">
+    <h2>Normalization: Making Scores Comparable</h2>
+    <p>Raw values for each metric vary widely. To make them comparable, we use <strong>robust min-max normalization</strong> based on the 5th and 95th percentiles across all tracts nationally:</p>
+    <div class="meth-formula">
+      $$ \mathrm{Norm}(X_i) = \min\!\left(1,\; \max\!\left[0,\; \frac{X_i - Q_5}{Q_{95} - Q_5}\right]\right) $$
+    </div>
+    <p>This clips extreme outliers so a few unusual tracts do not distort the entire scale. Values below the 5th percentile become 0; values above the 95th become 1.</p>
+    <p>For metrics where a higher raw value means <em>better</em> access, we flip the score: $\;\mathrm{Gap} = 1 - \mathrm{Norm}(X_i)$.</p>
+  </section>
+
+  <!-- Full Expanded -->
+  <section class="meth-section">
+    <h2>Full Expanded Formula</h2>
+    <p>Substituting all component formulas into the core BEI equation:</p>
+    <div class="meth-formula" style="font-size:14px">
+      $$ \mathrm{BEI}_i = 100 \bigg[ 0.25\Big(1 - \mathrm{Norm}(A_i^{(S)})\Big) + 0.30\Big(0.75\,\mathrm{Norm}(T_i^{\text{sys}}) + 0.25\,\mathrm{Norm}(\Delta_i)\Big) + 0.20\Big(1 - \mathrm{Norm}(A_i^{(P)})\Big) + 0.25\Big(1 - \mathrm{Norm}(A_i^{(C)})\Big) \bigg] $$
+    </div>
+  </section>
+
+  <!-- Interpretation -->
+  <section class="meth-section">
+    <h2>Interpreting the Score</h2>
+    <div class="interp-grid">
+      <div class="interp-card high">
+        <h3>High BEI (Worse Access)</h3>
+        <ul>
+          <li>Few specialized burn centers nearby</li>
+          <li>Long travel times — even with transfers</li>
+          <li>Poor pediatric burn-care access for children</li>
+          <li>Few burn beds relative to population</li>
+        </ul>
+      </div>
+      <div class="interp-card low">
+        <h3>Low BEI (Better Access)</h3>
+        <ul>
+          <li>Strong nearby specialty supply</li>
+          <li>Timely direct or transfer-based access</li>
+          <li>Good pediatric burn-care availability</li>
+          <li>Adequate burn-bed capacity nearby</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Sources -->
+  <section class="meth-section">
+    <h2>Data Sources</h2>
+    <div class="meth-steps">
+      <div class="meth-step">
+        <div class="step-num" style="background:#457B9D">1</div>
+        <div><strong>NIRD (National Inpatient Rehabilitation Database):</strong> Burn center locations, ABA verification status, bed counts, pediatric capability, and trauma level designations.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num" style="background:#457B9D">2</div>
+        <div><strong>U.S. Census Bureau:</strong> Census tract boundaries, total and child population estimates, and geographic identifiers.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num" style="background:#457B9D">3</div>
+        <div><strong>OpenStreetMap + OSRM:</strong> Road-network travel times between tract centroids and facility locations.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num" style="background:#457B9D">4</div>
+        <div><strong>CDC/ATSDR SVI:</strong> Social Vulnerability Index for overlay analysis (kept separate from the core BEI score).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- County Rollup -->
+  <section class="meth-section">
+    <h2>County-Level Rollup</h2>
+    <p>The BEI is computed at the census-tract level. To produce county-level scores (used in the National map), we take a <strong>population-weighted average</strong> of all tracts within each county:</p>
+    <div class="meth-formula">
+      $$ \mathrm{BEI}_{\text{county}} = \frac{\sum_{i \in \text{county}} \mathrm{Pop}_i \times \mathrm{BEI}_i}{\sum_{i \in \text{county}} \mathrm{Pop}_i} $$
+    </div>
+    <p>This ensures that the county score reflects the experience of the population, not just the average of land areas.</p>
+  </section>
+
+</div>
+</div>
+
+<!-- ===================== LIMITATIONS ===================== -->
+<div class="page" id="page-limitations">
+<div class="methodology">
+
+  <h1>Limitations</h1>
+  <p class="subtitle">Known constraints and caveats of the current Burn Equity Index implementation</p>
+
+  <section class="meth-section">
+    <h2>Driving Distance Computation</h2>
+    <p>The most significant limitation of this analysis is the <strong>driving distance and travel time calculation</strong>. All road-network routing was performed using <strong>Valhalla</strong> (an open-source routing engine built on OpenStreetMap data) running locally. This introduced two major constraints:</p>
+
+    <div class="pillar-cards" style="grid-template-columns:1fr 1fr">
+      <div class="pillar-card" style="border-left:4px solid #E76F51">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#E76F51">MN</span>
+          <div><strong>Minnesota — Tract-Level Routing</strong><span class="pillar-weight">Higher granularity</span></div>
+        </div>
+        <p>For Minnesota, driving distances were computed at the <strong>census-tract level</strong> — routing from every tract centroid to every relevant facility. This produces the most accurate travel time estimates and is the intended resolution for the BEI.</p>
+      </div>
+      <div class="pillar-card" style="border-left:4px solid #E9C46A">
+        <div class="pillar-card-header">
+          <span class="pillar-icon" style="background:#E9C46A">US</span>
+          <div><strong>National — County-Level Routing</strong><span class="pillar-weight">Lower granularity</span></div>
+        </div>
+        <p>For the national analysis, driving distances were computed at the <strong>county level only</strong> (county centroid to facilities). Tract-level routing for the entire U.S. was infeasible due to RAM limitations on the local machine and the total query time required by Valhalla.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:16px">County-level routing means that all tracts within a county share the same driving distance estimate. In large or geographically diverse counties, this can mask significant within-county variation — for example, a tract at the far edge of a large rural county may be meaningfully farther from care than the county centroid suggests.</p>
+  </section>
+
+  <section class="meth-section">
+    <h2>Hardware &amp; Query Constraints</h2>
+    <p>Valhalla's local tile server requires the full OSM road graph to be loaded into memory. For a nationwide origin–destination matrix at the tract level, this exceeds the available RAM on a consumer-grade workstation. Additionally, even at county resolution, the national query set (3,000+ counties × multiple facilities) required substantial processing time.</p>
+    <div class="meth-steps">
+      <div class="meth-step">
+        <div class="step-num" style="background:#D62828">1</div>
+        <div><strong>RAM bottleneck:</strong> Loading the full U.S. OSM graph into Valhalla required more memory than the local machine could provide for tract-level queries nationwide.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num" style="background:#D62828">2</div>
+        <div><strong>Query time:</strong> Even at county granularity, the full national routing matrix took significant wall-clock time to compute. Tract-level resolution (~73,000 origins) was not feasible within the hackathon timeframe.</div>
+      </div>
+      <div class="meth-step">
+        <div class="step-num" style="background:#D62828">3</div>
+        <div><strong>Ideal scenario:</strong> With access to a high-memory server or a cloud-hosted routing API, tract-level travel times could be computed nationally, which would substantially improve the precision of the national BEI.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meth-section">
+    <h2>Missing Data: Florida</h2>
+    <p><strong>Florida counties are absent from the national map.</strong> During the Valhalla routing batch, queries for Florida origins returned errors and failed to produce valid travel-time results. Due to hackathon time constraints, there was insufficient time to diagnose and re-run the Florida routing queries.</p>
+    <div class="pillar-card" style="border-left:4px solid #D62828;margin-top:14px">
+      <div class="pillar-card-header">
+        <span class="pillar-icon" style="background:#D62828">FL</span>
+        <div><strong>Florida — Missing from National BEI</strong><span class="pillar-weight">Valhalla query error</span></div>
+      </div>
+      <p>Florida's 67 counties do not have BEI scores in the current dataset. This is a data-pipeline gap, not a methodological exclusion — the BEI formula applies identically to Florida. Given more time, re-running the Valhalla queries would fill this gap with no changes to the index methodology.</p>
+    </div>
+  </section>
+
+  <section class="meth-section">
+    <h2>Other Considerations</h2>
+    <table class="meth-table">
+      <thead><tr><th>Limitation</th><th>Impact</th><th>Mitigation Path</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>County-level routing (national)</td>
+          <td>Masks intra-county travel variation, especially in large rural counties</td>
+          <td>Re-run with tract-level routing on a high-memory machine or cloud service</td>
+        </tr>
+        <tr>
+          <td>Florida missing</td>
+          <td>No BEI scores for 67 FL counties; national statistics exclude FL population</td>
+          <td>Re-run Valhalla queries for Florida origins and merge into pipeline</td>
+        </tr>
+        <tr>
+          <td>OSM road network freshness</td>
+          <td>Travel times reflect OSM snapshot at time of download; recent road changes may not be captured</td>
+          <td>Use regularly updated OSM extracts or a hosted routing service</td>
+        </tr>
+        <tr>
+          <td>Drive time only (no air transport)</td>
+          <td>Transfer paths model ground transport; air ambulance routing is approximated, not modeled with real flight corridors</td>
+          <td>Integrate air-transport isochrones if flight data becomes available</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+</div>
+
+<!-- ===================== CREDITS ===================== -->
+<div class="page" id="page-credits">
+<div class="credits">
+  <h1>Credits</h1>
+  <p class="subtitle">The people behind the Burn Equity Index</p>
+
+  <div class="credits-section">
+    <h2>Team 15</h2>
+    <div class="team-grid">
+      <div class="team-card lead">
+        <div class="avatar">JT</div>
+        <div class="name">Jacob Tang</div>
+        <div class="role">Team Lead</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar" style="background:#457B9D">MJ</div>
+        <div class="name">Madeline Rose Johnson</div>
+        <div class="role">Team Member</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar" style="background:#2a9d8f">YY</div>
+        <div class="name">Yisihaq Yemiru</div>
+        <div class="role">Team Member</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar" style="background:#E9C46A;color:#1A2634">M</div>
+        <div class="name">Mashfika</div>
+        <div class="role">Team Member</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="credits-section">
+    <h2>Organized By</h2>
+    <div class="org-card">
+      <div class="org-name">Bdata</div>
+      <div class="org-desc">Hackathon Organizers</div>
+    </div>
+  </div>
+
+  <div class="credits-footer">
+    Burn Equity Index &mdash; Challenge Area 3 &middot; Built with open data and open-source tools
+  </div>
+</div>
+</div>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" src=""></div>
+
+<script>
+/* ==================== NAV ==================== */
+document.querySelectorAll('.nav-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('page-'+tab.dataset.page).classList.add('active');
+    if(tab.dataset.page==='mn'&&!mnMapInit) initMnMap();
+    if(tab.dataset.page==='usa'&&!usaMapInit) initUsaMap();
+    if(tab.dataset.page==='methodology'&&typeof renderMathInElement==='function'){
+      renderMathInElement(document.getElementById('page-methodology'),{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    }
+  });
+});
+
+/* ==================== LIGHTBOX ==================== */
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img');
+lb.addEventListener('click',()=>lb.classList.remove('active'));
+function openLightbox(src){lbImg.src=src;lb.classList.add('active');}
+
+/* ==================== BEI COLOR (green → red) ==================== */
+function beiColor(v){
+  if(v==null||isNaN(v)) return '#333';
+  const stops=[
+    [0,'#1a9850'],[15,'#66bd63'],[30,'#a6d96a'],
+    [45,'#d9ef8b'],[55,'#fee08b'],
+    [70,'#fdae61'],[85,'#f46d43'],[100,'#a50026']
+  ];
+  if(v<=stops[0][0]) return stops[0][1];
+  for(let i=1;i<stops.length;i++){
+    if(v<=stops[i][0]){
+      const t=(v-stops[i-1][0])/(stops[i][0]-stops[i-1][0]);
+      return lerpColor(stops[i-1][1],stops[i][1],t);
+    }
+  }
+  return stops[stops.length-1][1];
+}
+function lerpColor(a,b,t){
+  const ar=parseInt(a.slice(1,3),16),ag=parseInt(a.slice(3,5),16),ab=parseInt(a.slice(5,7),16);
+  const br=parseInt(b.slice(1,3),16),bg=parseInt(b.slice(3,5),16),bb=parseInt(b.slice(5,7),16);
+  const r=Math.round(ar+(br-ar)*t),g=Math.round(ag+(bg-ag)*t),bl=Math.round(ab+(bb-ab)*t);
+  return '#'+[r,g,bl].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function pillarColor(name){
+  const m={s_score:'#E9C46A',t_score:'#E76F51',p_score:'#2a9d8f',c_score:'#264653',
+           s:'#E9C46A',t:'#E76F51',p:'#2a9d8f',c:'#264653'};
+  return m[name]||'#888';
+}
+function scoreColor(v){return beiColor(v*100);}
+function beiBadge(v){
+  if(v==null) return '<span class="bei-badge" style="background:#333;color:#aaa">N/A</span>';
+  const bg=beiColor(v);
+  const fg=(v>50)?'#fff':'#1A2634';
+  return `<span class="bei-badge" style="background:${bg};color:${fg}">${v.toFixed(1)}</span>`;
+}
+
+/* ==================== OVERVIEW ==================== */
+const mnFigs=[
+  {src:'mn_06_bei_map.png',cap:'BEI Map — Burn Equity Hotspots',
+   sum:'Northern and western Minnesota show the highest burn equity burden, with rural tracts far from any verified burn center. The Twin Cities metro area is well-served, but disparities widen sharply beyond the metro fringe.'},
+  {src:'mn_03_rural_urban_gap.png',cap:'Rural vs Urban Travel Time Divide',
+   sum:'Rural Minnesotans face a median travel time of over 2 hours to the nearest burn center—more than 6x longer than urban residents. This gap is the single largest driver of inequity.'},
+  {src:'mn_04_coverage_curve.png',cap:'Population Coverage by Drive Time',
+   sum:'Only about half of Minnesota residents can reach a burn center within 30 minutes. Nearly 30% of the population lives more than 60 minutes from definitive burn care.'},
+  {src:'mn_07_bei_drivers.png',cap:'What Drives Burn Equity Gaps?',
+   sum:'Supply scarcity and capacity constraints are the dominant BEI pillars in high-burden areas. Travel burden, while important, is amplified by the near-total absence of facilities in the northern half of the state.'},
+  {src:'mn_02_travel_time_map.png',cap:'Ground Travel Time to Nearest Burn Center',
+   sum:'Travel time follows a predictable geographic gradient, but the transition from "reachable" to "unreachable" is abrupt—many tracts shift from under 60 min to well over 3 hours within a single county.'},
+  {src:'mn_08_hotspot_table.png',cap:'Highest-Burden Census Tracts',
+   sum:'The 25 highest-BEI tracts are concentrated in the northwestern and north-central counties. Most are rural, with populations under 5,000, and face extreme supply and capacity gaps.'},
+];
+const usaFigs=[
+  {src:'usa_01_county_bei_map.png',cap:'National County BEI Map',
+   sum:'County-level BEI reveals a national patchwork of burn care access. The Great Plains, Appalachia, and rural Deep South carry the heaviest burden, while metro corridors along the coasts show consistently low BEI.'},
+  {src:'usa_02_state_rankings.png',cap:'State Burn Equity Rankings',
+   sum:'States with large rural geographies and few burn centers—like Montana, Wyoming, and the Dakotas—rank among the worst nationally. Population-weighted BEI exposes inequity even in otherwise well-resourced states.'},
+  {src:'usa_03_coverage_gap.png',cap:'National Population Coverage Gap',
+   sum:'Nationwide, millions of Americans live more than 60 minutes from a verified burn center. The coverage gap disproportionately affects rural communities and tribal lands.'},
+];
+
+function buildOverview(stats){
+  const sg=document.getElementById('stats-grid');
+  const cards=[
+    {label:'MN Tracts Analyzed',value:stats.mn.tracts.toLocaleString(),cls:'accent'},
+    {label:'MN Population',value:(stats.mn.pop/1e6).toFixed(1)+'M',cls:''},
+    {label:'MN Rural Tracts',value:stats.mn.rural_pct+'%',cls:'red'},
+    {label:'MN Median BEI',value:stats.mn.bei_median,cls:'accent'},
+    {label:'MN High-Burden Tracts',value:stats.mn.high_burden_tracts,cls:'red',detail:'BEI ≥ 80'},
+    {label:'MN Within 30 min',value:stats.mn.pct_30min+'%',cls:'green'},
+    {label:'Rural Median Travel',value:stats.mn.rural_median_min+' min',cls:'red'},
+    {label:'Urban Median Travel',value:stats.mn.urban_median_min+' min',cls:'green'},
+    {label:'US Counties',value:stats.usa.counties.toLocaleString(),cls:'accent'},
+    {label:'US Population',value:(stats.usa.pop/1e6).toFixed(0)+'M',cls:''},
+    {label:'Burn Centers (US)',value:stats.usa.burn_centers,cls:'accent'},
+    {label:'Total Burn Beds (US)',value:stats.usa.burn_beds.toLocaleString(),cls:'accent'},
+  ];
+  sg.innerHTML=cards.map(c=>`<div class="stat-card"><div class="label">${c.label}</div><div class="value ${c.cls}">${c.value}</div>${c.detail?`<div class="detail">${c.detail}</div>`:''}</div>`).join('');
+
+  document.getElementById('mn-figures').innerHTML=mnFigs.map(f=>`<div class="fig-card" onclick="openLightbox('${f.src}')"><img src="${f.src}" loading="lazy"><div class="caption">${f.cap}</div><div class="fig-summary">${f.sum}</div></div>`).join('');
+  document.getElementById('usa-figures').innerHTML=usaFigs.map(f=>`<div class="fig-card" onclick="openLightbox('${f.src}')"><img src="${f.src}" loading="lazy"><div class="caption">${f.cap}</div><div class="fig-summary">${f.sum}</div></div>`).join('');
+}
+
+/* ==================== MN MAP ==================== */
+let mnMapInit=false, mnMap, mnLayer, mnGeoData, mnCurrentLayer='bei', mnChart, mnCountyNames={};
+function initMnMap(){
+  mnMapInit=true;
+  mnMap=L.map('mn-map',{zoomControl:true}).setView([46.2,-94.5],7);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; CARTO',maxZoom:18
+  }).addTo(mnMap);
+  Promise.all([
+    fetch('mn_tracts_bei.geojson').then(r=>r.json()),
+    fetch('mn_county_names.json').then(r=>r.json())
+  ]).then(([data, countyNames])=>{
+    mnGeoData=data;
+    mnCountyNames=countyNames;
+    mnLayer=L.geoJSON(data,{style:f=>mnStyle(f),onEachFeature:(f,l)=>{
+      l.on({click:e=>showMnDetail(f.properties,e),mouseover:e=>{e.target.setStyle({weight:2,fillOpacity:.85})},mouseout:e=>{mnLayer.resetStyle(e.target)}});
+    }}).addTo(mnMap);
+    addFacilitiesLayer(mnMap,'mn');
+  });
+  document.querySelectorAll('input[name="mn-layer"]').forEach(r=>{
+    r.addEventListener('change',e=>{mnCurrentLayer=e.target.value;updateMnStyle();});
+  });
+}
+
+function mnStyle(f){
+  const p=f.properties;
+  const v=mnCurrentLayer==='bei'?p.bei:mnCurrentLayer==='is_rural'?(p.is_rural?1:0):p[mnCurrentLayer];
+  let color;
+  if(mnCurrentLayer==='is_rural') color=p.is_rural?'#D62828':'#457B9D';
+  else if(mnCurrentLayer==='bei') color=beiColor(v);
+  else if(mnCurrentLayer==='svi_overall') color=v!=null?beiColor(v*100):'#333';
+  else color=v!=null?scoreColor(v):'#333';
+  return{fillColor:color,weight:.5,color:'#1A2634',fillOpacity:.7};
+}
+
+function updateMnStyle(){
+  if(!mnLayer) return;
+  mnLayer.setStyle(f=>mnStyle(f));
+  const beiGrad='linear-gradient(to right,#1a9850,#66bd63,#a6d96a,#d9ef8b,#fee08b,#fdae61,#f46d43,#d73027,#a50026)';
+  const isBei=mnCurrentLayer==='bei';
+  const isRural=mnCurrentLayer==='is_rural';
+  const isScore=['t_score','s_score','p_score','c_score','svi_overall'].includes(mnCurrentLayer);
+  document.getElementById('mn-leg-lo').textContent=isRural?'Urban':(isBei?'0 — Good':'0 — Good');
+  document.getElementById('mn-leg-hi').textContent=isRural?'Rural':(isBei?'100 — Critical':'1.0 — Critical');
+  document.getElementById('mn-leg-ticks').style.display=isRural?'none':'flex';
+  if(isRural){
+    document.getElementById('mn-legend-bar').style.background='linear-gradient(to right,#457B9D,#D62828)';
+    document.getElementById('mn-leg-ticks').innerHTML='';
+  } else if(isScore){
+    document.getElementById('mn-legend-bar').style.background=beiGrad;
+    document.getElementById('mn-leg-ticks').innerHTML='<span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1.0</span>';
+  } else {
+    document.getElementById('mn-legend-bar').style.background=beiGrad;
+    document.getElementById('mn-leg-ticks').innerHTML='<span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>';
+  }
+}
+
+function showMnDetail(p){
+  const d=document.getElementById('mn-detail');
+  const countyFp=p.COUNTYFP||'';
+  const countyName=mnCountyNames[countyFp]||('County '+countyFp);
+  const tractName=p.NAMELSAD||('Tract '+p.NAME);
+  d.innerHTML=`
+    <div class="sidebar-section">
+      <h4 style="font-size:14px;text-transform:none;letter-spacing:0;color:var(--text)">${tractName}</h4>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px">${countyName}, Minnesota</div>
+      <div style="margin:8px 0">${beiBadge(p.bei)} <span style="color:var(--muted);font-size:12px;margin-left:8px">${p.is_rural?'Rural':'Urban'}</span></div>
+    </div>
+    <div class="sidebar-section">
+      <h4>BEI Pillar Breakdown</h4>
+      ${pillarBar('Supply',p.s_score,'s_score')}
+      ${pillarBar('Travel',p.t_score,'t_score')}
+      ${pillarBar('Pediatric',p.p_score,'p_score')}
+      ${pillarBar('Capacity',p.c_score,'c_score')}
+    </div>
+    <div class="sidebar-section">
+      <h4>Demographics</h4>
+      ${infoRow('Population',p.total_pop!=null?p.total_pop.toLocaleString():'—')}
+      ${infoRow('Child Pop (< 18)',p.child_pop!=null?p.child_pop.toLocaleString():'—')}
+      ${infoRow('RUCA Code',p.ruca_code!=null?p.ruca_code:'—')}
+      ${infoRow('Classification',p.is_rural?'<span style="color:#D62828">Rural</span>':'<span style="color:#457B9D">Urban</span>')}
+    </div>
+    <div class="sidebar-section">
+      <h4>Access</h4>
+      ${infoRow('System Travel Time',p.t_sys!=null?p.t_sys.toFixed(0)+' min':'—')}
+      ${infoRow('Access Pathway',p.access_pathway||'—')}
+    </div>
+    <div class="sidebar-section">
+      <h4>Social Vulnerability Index</h4>
+      ${infoRow('Overall SVI',p.svi_overall!=null?p.svi_overall.toFixed(2):'—')}
+      ${infoRow('Socioeconomic',p.svi_theme1!=null?p.svi_theme1.toFixed(2):'—')}
+      ${infoRow('Housing/Disability',p.svi_theme2!=null?p.svi_theme2.toFixed(2):'—')}
+      ${infoRow('Minority/Language',p.svi_theme3!=null?p.svi_theme3.toFixed(2):'—')}
+      ${infoRow('Housing/Transport',p.svi_theme4!=null?p.svi_theme4.toFixed(2):'—')}
+    </div>
+    <div class="chart-container"><canvas id="mn-pillar-chart"></canvas></div>
+  `;
+  renderPillarChart('mn-pillar-chart',p);
+}
+
+/* ==================== USA MAP ==================== */
+let usaMapInit=false, usaMap, usaLayer, usaData={}, usaCurrentLayer='bei';
+function initUsaMap(){
+  usaMapInit=true;
+  usaMap=L.map('usa-map',{zoomControl:true}).setView([39,-98],4);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; CARTO',maxZoom:18
+  }).addTo(usaMap);
+  Promise.all([
+    fetch('usa_county_bei.json').then(r=>r.json()),
+    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json').then(r=>r.json())
+  ]).then(([beiData, topo])=>{
+    usaData=beiData;
+    const geojson=topojsonFeature(topo,topo.objects.counties);
+    usaLayer=L.geoJSON(geojson,{
+      style:f=>usaStyle(f),
+      onEachFeature:(f,l)=>{
+        l.on({click:e=>showUsaDetail(f,e),mouseover:e=>{e.target.setStyle({weight:2,fillOpacity:.85})},mouseout:e=>{usaLayer.resetStyle(e.target)}});
+      }
+    }).addTo(usaMap);
+    addFacilitiesLayer(usaMap,'usa');
+  });
+  document.querySelectorAll('input[name="usa-layer"]').forEach(r=>{
+    r.addEventListener('change',e=>{usaCurrentLayer=e.target.value;updateUsaStyle();});
+  });
+}
+
+function topojsonFeature(topology,object){
+  const arcs=topology.arcs;
+  function arcToCoords(arcIdx){
+    let arc=arcs[arcIdx<0?~arcIdx:arcIdx];
+    let coords=[];let x=0,y=0;
+    for(const[dx,dy]of arc){x+=dx;y+=dy;coords.push([x,y]);}
+    if(arcIdx<0) coords.reverse();
+    return coords;
+  }
+  function ringToCoords(ring){
+    let coords=[];
+    for(const arcIdx of ring){coords.push(...arcToCoords(arcIdx));}
+    const s=topology.transform?.scale||[1,1];
+    const t=topology.transform?.translate||[0,0];
+    return coords.map(([x,y])=>[x*s[0]+t[0],y*s[1]+t[1]]);
+  }
+  function geoFromArcs(geom){
+    if(geom.type==='Polygon') return{type:'Polygon',coordinates:geom.arcs.map(ringToCoords)};
+    if(geom.type==='MultiPolygon') return{type:'MultiPolygon',coordinates:geom.arcs.map(a=>a.map(ringToCoords))};
+    return null;
+  }
+  return{type:'FeatureCollection',features:object.geometries.map(g=>{
+    const geo=geoFromArcs(g);
+    return geo?{type:'Feature',id:g.id,properties:g.properties||{},geometry:geo}:null;
+  }).filter(Boolean)};
+}
+
+function usaStyle(f){
+  const fips=String(f.id).padStart(5,'0');
+  const d=usaData[fips];
+  let v=null;
+  if(d){
+    if(usaCurrentLayer==='bei') v=d.bei;
+    else v=d[usaCurrentLayer];
+  }
+  let color;
+  if(usaCurrentLayer==='bei') color=v!=null?beiColor(v):'#222';
+  else color=v!=null?scoreColor(v):'#222';
+  return{fillColor:color,weight:.3,color:'#1A2634',fillOpacity:.7};
+}
+
+function updateUsaStyle(){
+  if(!usaLayer) return;
+  usaLayer.setStyle(f=>usaStyle(f));
+}
+
+function showUsaDetail(f){
+  const fips=String(f.id).padStart(5,'0');
+  const d=usaData[fips]||{};
+  const det=document.getElementById('usa-detail');
+  const countyName=d.name||('County '+fips);
+  const stAbbr=d.st||'';
+  det.innerHTML=`
+    <div class="sidebar-section">
+      <h4 style="font-size:14px;text-transform:none;letter-spacing:0;color:var(--text)">${countyName}</h4>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px">${stAbbr} &middot; FIPS ${fips}</div>
+      <div style="margin:8px 0">${beiBadge(d.bei)}</div>
+    </div>
+    <div class="sidebar-section">
+      <h4>BEI Pillar Breakdown</h4>
+      ${pillarBar('Supply',d.s,'s')}
+      ${pillarBar('Travel',d.t,'t')}
+      ${pillarBar('Pediatric',d.p,'p')}
+      ${pillarBar('Capacity',d.c,'c')}
+    </div>
+    <div class="sidebar-section">
+      <h4>Demographics</h4>
+      ${infoRow('Population',d.pop?d.pop.toLocaleString():'—')}
+      ${infoRow('Child Pop',d.cpop?d.cpop.toLocaleString():'—')}
+      ${infoRow('System Travel',d.tsys!=null?d.tsys.toFixed(0)+' min':'—')}
+    </div>
+    <div class="chart-container"><canvas id="usa-pillar-chart"></canvas></div>
+  `;
+  renderPillarChart('usa-pillar-chart',{s_score:d.s,t_score:d.t,p_score:d.p,c_score:d.c});
+}
+
+/* ==================== FACILITIES LAYER ==================== */
+function addFacilitiesLayer(map,prefix){
+  fetch('facilities.json').then(r=>r.json()).then(facs=>{
+    const group=L.layerGroup();
+    facs.forEach(f=>{
+      if(!f.lat||!f.lon) return;
+      if(prefix==='mn'){
+        if(f.lat<43||f.lat>50||f.lon<-98||f.lon>-88) return;
+      }
+      const r=f.def?6:3;
+      const c=f.aba?'#E85D04':f.def?'#F48C06':'#457B9D';
+      const marker=L.circleMarker([f.lat,f.lon],{radius:r,fillColor:c,color:'#fff',weight:1,fillOpacity:.9});
+      marker.bindPopup(`<b>${f.name}</b><br>${f.city}, ${f.state}<br>Burn Beds: ${f.beds}<br>${f.aba?'ABA Verified':''}${f.peds?' | Pediatric':''}${f.def?' | Definitive':f.stab?' | Stabilization':''}`);
+      group.addLayer(marker);
+    });
+    group.addTo(map);
+  });
+}
+
+/* ==================== HELPERS ==================== */
+function pillarBar(label,val,key){
+  const pct=val!=null?(val*100).toFixed(0):0;
+  const color=pillarColor(key);
+  return `<div class="pillar-row"><div class="pillar-label">${label}</div><div class="pillar-bar-bg"><div class="pillar-bar" style="width:${pct}%;background:${color}"></div></div><div class="pillar-val">${val!=null?val.toFixed(2):'—'}</div></div>`;
+}
+function infoRow(label,value){
+  return `<div class="info-row"><span class="info-label">${label}</span><span class="info-value">${value}</span></div>`;
+}
+function renderPillarChart(canvasId,p){
+  const ctx=document.getElementById(canvasId);
+  if(!ctx) return;
+  new Chart(ctx,{
+    type:'radar',
+    data:{
+      labels:['Supply','Travel','Pediatric','Capacity'],
+      datasets:[{
+        data:[p.s_score||p.s||0,p.t_score||p.t||0,p.p_score||p.p||0,p.c_score||p.c||0],
+        backgroundColor:'rgba(232,93,4,.2)',borderColor:'#E85D04',pointBackgroundColor:'#E85D04',
+        borderWidth:2,pointRadius:4
+      }]
+    },
+    options:{
+      scales:{r:{beginAtZero:true,max:1,ticks:{stepSize:.25,color:'#8899AA',backdropColor:'transparent'},grid:{color:'#2A3A4A'},pointLabels:{color:'#E8ECF1',font:{size:12}}}},
+      plugins:{legend:{display:false}},
+      responsive:true,maintainAspectRatio:true
+    }
+  });
+}
+
+/* ==================== INIT ==================== */
+fetch('summary_stats.json').then(r=>r.json()).then(buildOverview);
+</script>
+</body>
+</html>

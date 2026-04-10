@@ -1,0 +1,8 @@
+{
+  "stage_id": "05",
+  "question": "How does transfer-aware routing change the access picture?",
+  "finding": "9% of MN tracts (138) rely on stabilize-and-transfer pathway. Transfer median: 480 min vs direct: 25 min.",
+  "why_it_matters": "Transfer pathways add critical minutes for time-sensitive burn patients.",
+  "action_implication": "Invest in reducing transfer times and pre-positioning resources at high-volume stabilization sites.",
+  "scenario_id": "ground_only"
+}

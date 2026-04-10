@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEI — Methodology &amp; Research</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath:  [['\\(','\\)']],
+        displayMath: [['\\[','\\]']],
+        processEscapes: true,
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    :root {
+      --bg:        #1c1c1c;
+      --surface:   #252525;
+      --surface2:  #2c2c2c;
+      --border:    #383838;
+      --text:      #d0d0d0;
+      --muted:     #888;
+      --heading:   #e8e8e8;
+      --accent:    #6baed6;
+      --accent2:   #74c0a8;
+      --code-bg:   #2a2a2a;
+      --box-bg:    #1e2433;
+      --box-border:#3a5070;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.72;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 54rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.75rem 4rem;
+    }
+
+    /* ── headings ── */
+    h1 { font-size: 1.8rem;  color: var(--heading); border-bottom: 1px solid var(--border); padding-bottom: .4rem; margin: 2.2rem 0 .8rem; }
+    h2 { font-size: 1.3rem;  color: var(--heading); margin: 1.8rem 0 .5rem; }
+    h3 { font-size: 1.1rem;  color: var(--accent);  margin: 1.4rem 0 .4rem; }
+    h4 { font-size: 1rem;    color: var(--accent2); margin: 1.1rem 0 .35rem; }
+    .page-title { font-size: 2rem; color: var(--heading); border: none; margin-top: 0; }
+
+    /* ── body copy ── */
+    p   { margin: .7rem 0; }
+    ul, ol { margin: .5rem 0; padding-left: 1.6rem; }
+    li  { margin: .25rem 0; }
+    hr  { border: none; border-top: 1px solid var(--border); margin: 1.8rem 0; }
+    strong { color: #e0e0e0; }
+    em     { color: #c0c0c0; }
+    blockquote {
+      margin: 1rem 0; padding: .6rem 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      color: var(--muted);
+      border-radius: 0 4px 4px 0;
+    }
+    code {
+      background: var(--code-bg);
+      color: #ce9178;
+      padding: .15em .4em;
+      border-radius: 3px;
+      font-size: .88em;
+      font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: .93rem;
+    }
+    .toc strong { color: var(--heading); }
+    .toc a { color: var(--accent); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .toc ul { margin: .4rem 0; }
+    .toc li { margin: .2rem 0; }
+
+    /* ── doc section divider ── */
+    .doc-section { margin-bottom: 4rem; }
+    .section-label {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      border-radius: 3px;
+      margin-bottom: .5rem;
+    }
+
+    /* ── math display blocks ── */
+    .math-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: .9rem 1.2rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+    .math-block.boxed {
+      background: var(--box-bg);
+      border-color: var(--box-border);
+    }
+    mjx-container[jax="CHTML"] { overflow-x: auto; overflow-y: hidden; }
+    mjx-container[display="true"] { margin: .25rem 0 !important; }
+  </style>
+</head>
+<body>
+
+<h1 class="page-title">Burn Equity Index — Methodology &amp; Research</h1>
+
+<nav class="toc">
+  <strong>Contents</strong>
+  <ul>
+    <li><a href="#s1">Part 1 — Revised Research Methodology</a>
+      <ul>
+        <li><a href="#s1-aim">Research Aim &amp; Framing</a></li>
+        <li><a href="#s1-data">Data Sources</a></li>
+        <li><a href="#s1-bei">BEI Structure &amp; Components</a></li>
+        <li><a href="#s1-access">Accessibility Modelling Approach</a></li>
+        <li><a href="#s1-scenarios">Transport Scenarios &amp; Feasibility</a></li>
+        <li><a href="#s1-reporting">Aggregation &amp; Reporting</a></li>
+      </ul>
+    </li>
+    <li><a href="#s2">Part 2 — BEI Implementation-Ready Specification</a>
+      <ul>
+        <li><a href="#s2-core">Core BEI Definition</a></li>
+        <li><a href="#s2-notation">Geography, Sets &amp; Notation</a></li>
+        <li><a href="#s2-decay">Distance-Decay Function</a></li>
+        <li><a href="#s2-norm">Robust Normalization</a></li>
+        <li><a href="#s2-components">Component Formulas (S, T, P, C)</a></li>
+        <li><a href="#s2-expanded">Final BEI — Full Expanded Form</a></li>
+        <li><a href="#s2-companion">Companion Outputs</a></li>
+        <li><a href="#s2-overlay">Need Overlay</a></li>
+        <li><a href="#s2-params">Default Parameter Choices</a></li>
+        <li><a href="#s2-data">Public/Free Data Scope</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     PART 1 — REVISED RESEARCH METHODOLOGY
+     ════════════════════════════════════════════════════════════ -->
+<div id="s1" class="doc-section">
+<span class="section-label">Part 1</span>
+<h1>Revised Research Methodology</h1>
+
+<h3 id="s1-aim">Research Aim</h3>
+<p>This study develops a <strong>Burn Equity Index (BEI)</strong> that measures <strong>structural inequities in timely burn-care access</strong>. The BEI is designed as an <strong>access and capacity model</strong>, not a patient-outcome model and not a generic social vulnerability score. Its purpose is to evaluate where people face structural disadvantages in reaching specialized burn care under the constraints of available hospital infrastructure, travel burden, pediatric capability, and burn-bed capacity.</p>
+
+<h3>Conceptual Framing</h3>
+<p>The revised methodology is grounded in the idea that <strong>burn-care inequity is primarily a systems-access problem</strong>. Because the NIRD dataset is a <strong>hospital-level dataset</strong> focused on burn-center designation, geography, and bed resources, the index should reflect <strong>specialized supply, transfer-aware access, pediatric access, and structural capacity</strong>. Demand-side or exposure variables are treated separately as optional overlays rather than core components, since local burn-incidence estimates are not reliably available at fine geographic scales from public data alone.</p>
+
+<h3>Geographic Unit of Analysis</h3>
+<p>The recommended analytic unit is the <strong>census tract</strong>. This provides the best balance between spatial detail and feasibility because public datasets such as ACS, RUCA, and SVI are available at tract level, while census blocks are too fine and county-level analysis is too coarse to capture sub-county disparities. County, state, and regional results can then be produced by aggregating tract-level BEI scores.</p>
+
+<h3 id="s1-data">Data Sources</h3>
+<p>The model uses <strong>challenge-provided NIRD + public/free augmentation layers</strong> for geographic augmentation, routing, and contextual analysis:</p>
+<ul>
+  <li><strong>NIRD</strong> — burn-center status, trauma capability, pediatric services, and burn-bed counts</li>
+  <li><strong>American Community Survey (ACS)</strong> — tract-level total population and child population</li>
+  <li><strong>TIGER/Line shapefiles</strong> — census tract boundaries and centroids</li>
+  <li><strong>Census Geocoder</strong> — assigning hospital locations to census geography</li>
+  <li><strong>USDA RUCA codes</strong> — tract-level rural/urban classification</li>
+  <li><strong>CDC Social Vulnerability Index (SVI)</strong> — optional contextual overlay</li>
+  <li><strong>OpenStreetMap road network</strong> + <strong>OSRM</strong> — road-network travel times</li>
+  <li><strong>FAA airport / heliport data</strong> (Airport Data &amp; Information Portal) — optional air-access sensitivity scenarios</li>
+</ul>
+<p>The public/free augmentation layers are verifiable, while <strong>NIRD should be described as challenge-provided</strong> unless an independent public bulk release source is later confirmed.</p>
+
+<h3 id="s1-bei">BEI Structure</h3>
+<p>The BEI is computed as a weighted composite of four structural dimensions:</p>
+<div class="math-block boxed">
+\[
+\mathrm{BEI}_i \;=\; 100\left(\,0.25\,S_i \;+\; 0.30\,T_i \;+\; 0.20\,P_i \;+\; 0.25\,C_i\,\right)
+\]
+</div>
+<p>where \(S_i\) = <strong>specialized supply scarcity</strong>, \(T_i\) = <strong>timely access burden</strong>, \(P_i\) = <strong>pediatric access gap</strong>, \(C_i\) = <strong>structural capacity gap</strong). A <strong>higher BEI</strong> indicates <strong>worse structural inequity in timely burn-care access</strong>.</p>
+
+<h3>Component Definitions</h3>
+
+<h4>1. Specialized Supply Scarcity \(S_i\)</h4>
+<p>Measures how limited access is to specialized burn-care facilities relative to the local population. Facilities are weighted by capability, with the greatest weight given to <strong>ABA-verified burn centers</strong>, followed by state-designated centers, burn-capable non-verified hospitals, and trauma-only stabilization sites. Accessibility is computed using a travel-time decay function.</p>
+
+<h4>2. Timely Access Burden \(T_i\)</h4>
+<p>Captures the travel burden to definitive burn care, incorporating both <strong>direct access</strong> to the nearest burn center and <strong>transfer-aware access</strong>, where a patient may first go to a local stabilization hospital before transfer. This reflects the reality of regionalized burn systems, especially in rural areas.</p>
+
+<h4>3. Pediatric Access Gap \(P_i\)</h4>
+<p>Modeled separately because pediatric burn access is a specific challenge requirement and a distinct systems issue. Uses child population denominators and pediatric-capable facility indicators from NIRD.</p>
+
+<h4>4. Structural Capacity Gap \(C_i\)</h4>
+<p>Measures the adequacy of <strong>structural burn-bed capacity</strong> reachable from each tract using NIRD-reported <code>BURN_BEDS</code>. Explicitly avoids interpreting this as real-time open-bed availability. An optional conservative utilization factor may be applied in sensitivity analysis.</p>
+
+<h3 id="s1-access">Accessibility Modelling Approach</h3>
+<p>The methodology uses an <strong>E2SFCA-style accessibility framework</strong> combined with a <strong>scenario-based transport model</strong>, accounting for distance decay, resource competition, multi-facility access, facility capability differences, referral and transfer structure, and ground-only vs. multimodal assumptions.</p>
+<p>For any origin tract \(i\) and facility \(j\), let \(m \in \{\text{road},\,\text{air}\}\) denote transport mode. Define a mode-specific travel time \(t_{ij}^{(m)}\) where:</p>
+<ul>
+  <li>\(t_{ij}^{(\text{road})}\) = road-network time from OSRM / OpenStreetMap</li>
+  <li>\(t_{ij}^{(\text{air})}\) = <em>total</em> air-access time, not merely in-air flight time</li>
+</ul>
+
+<p>The air pathway is decomposed as a <strong>multi-stage pipeline</strong>:</p>
+<div class="math-block">
+\[
+t_{ij}^{(\text{air})}
+\;=\;
+t_i^{\text{dispatch}}
+\;+\;
+t_i^{\text{ground-to-launch}}
+\;+\;
+t_{ij}^{\text{flight}}
+\;+\;
+t_j^{\text{landing-to-facility}}
+\;+\;
+t_{ij}^{\text{handoff}}
+\]
+</div>
+<p>Because nationwide real-time air-ambulance dispatch availability is not publicly available, the air term is used as a <strong>scenario-based sensitivity analysis</strong>, not a claim about guaranteed helicopter access.</p>
+
+<p>To avoid overstating air access, define a feasibility rule for each scenario:</p>
+<div class="math-block">
+\[
+\tilde{t}_{ij}^{(m)} \;=\;
+\begin{cases}
+t_{ij}^{(m)}, & \text{if mode }m\text{ is allowed under the scenario} \\[4pt]
++\infty,       & \text{otherwise}
+\end{cases}
+\]
+</div>
+
+<p>Direct access to definitive burn care:</p>
+<div class="math-block">
+\[
+T_i^{\text{dir}}
+\;=\;
+\min_{d\,\in\,\mathcal{D}}
+\!\left[\,
+  \min_{m\,\in\,\{\text{road},\text{air}\}}
+  \tilde{t}_{id}^{(m)}
+\,\right]
+\]
+</div>
+
+<p>Transfer-aware access (patient goes first to stabilization hospital \(s\), then to burn center \(d\)):</p>
+<div class="math-block">
+\[
+T_i^{\text{trans}}
+\;=\;
+\min_{\substack{s\,\in\,\mathcal{S} \\ d\,\in\,\mathcal{D}}}
+\!\left[\,
+  \min_{m_1\,\in\,\{\text{road},\text{air}\}} \tilde{t}_{is}^{(m_1)}
+  \;+\;
+  \tau_s
+  \;+\;
+  \min_{m_2\,\in\,\{\text{road},\text{air}\}} \tilde{t}_{sd}^{(m_2)}
+\,\right]
+\]
+</div>
+
+<p>Overall system access time:</p>
+<div class="math-block">
+\[
+T_i^{\text{sys}} \;=\; \min\!\left(T_i^{\text{dir}},\; T_i^{\text{trans}}\right)
+\]
+</div>
+
+<h3 id="s1-scenarios">Transport Scenarios and Public-Data Feasibility</h3>
+<p>The recommended reporting structure publishes at least two scenarios:</p>
+<ol>
+  <li><strong>Ground-only baseline</strong> — OpenStreetMap + OSRM road-network routing</li>
+  <li><strong>Conditional ground-plus-air sensitivity</strong> — public FAA airport/heliport infrastructure data plus analyst-defined dispatch and handoff assumptions</li>
+</ol>
+<p>A practical implementation:</p>
+<ul>
+  <li>Use <strong>OpenStreetMap / Geofabrik extracts</strong> and <strong>OSRM</strong> for all surface legs</li>
+  <li>Use <strong>FAA airport / heliport records</strong> for candidate launch and landing infrastructure</li>
+  <li>Estimate flight segment from coordinates using a transparent assumed cruise-speed parameter</li>
+  <li>Keep dispatch and handoff times as explicit scenario parameters</li>
+</ul>
+<p>Real-time rotor-wing availability, weather restrictions, and operational dispatch rules are <strong>not directly observed</strong> in the public stack.</p>
+
+<h3>Treatment of Rurality and Social Context</h3>
+<p><strong>RUCA codes</strong> stratify rural vs. urban access burdens. <strong>SVI</strong> and social context variables are <em>not</em> part of the core BEI — they serve as a secondary lens for interpretation or hotspot prioritization.</p>
+
+<h3>Need and Exposure Overlay</h3>
+<p>The methodology does <strong>not</strong> include burn exposure or local injury burden as a core BEI pillar, since public datasets do not reliably support small-area burn-incidence estimation. Need is presented as a separate overlay using total population, child population, and optionally a validated injury proxy.</p>
+
+<h3 id="s1-reporting">Aggregation and Reporting</h3>
+<p>BEI is computed at the <strong>tract level</strong> and reported at multiple levels:</p>
+<ul>
+  <li><strong>Tract-level maps</strong> for hotspots and fine-grained disparities</li>
+  <li><strong>County-level summaries</strong> using population-weighted averages</li>
+  <li><strong>State / regional summaries</strong> for policy comparison</li>
+</ul>
+<p>Challenge-specific outputs reported directly: burn centers per capita, rural vs. urban travel burden, pediatric access relative to child population, structural burn-bed capacity in high- vs. low-need areas.</p>
+
+<h3>Methodological Contribution</h3>
+<p>The novelty lies in reframing burn inequity as a <strong>structural access and capacity problem</strong>. Key contributions:</p>
+<ul>
+  <li>Tract-level structural equity index</li>
+  <li>Transfer-aware access pathways</li>
+  <li>Explicit separation of pediatric access</li>
+  <li>Distinction between structural capacity and real-time availability</li>
+  <li>Preservation of regionalized, tiered care logic</li>
+</ul>
+
+<h3>Final Methodological Position</h3>
+<p>The revised BEI methodology is a <strong>tract-based, literature-informed structural access model</strong> using challenge-provided NIRD + public/free augmentation layers (ACS, TIGER/Line, Census Geocoder, RUCA, SVI, OpenStreetMap/OSRM, optional FAA infrastructure). It quantifies inequity in access to specialized burn care through four core dimensions: supply, timely access, pediatric access, and structural capacity.</p>
+</div><!-- /s1 -->
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PART 2 — IMPLEMENTATION-READY SPECIFICATION
+     ════════════════════════════════════════════════════════════ -->
+<div id="s2" class="doc-section">
+<span class="section-label">Part 2</span>
+<h1>BEI — Implementation-Ready Specification</h1>
+<p>A detailed, implementation-ready BEI specification consistent with the revised framing: structural access and capacity at census-tract level.</p>
+
+<hr>
+
+<h2 id="s2-core">1) Core BEI Definition</h2>
+<p>Let \(i\) index a <strong>census tract</strong>.</p>
+<div class="math-block boxed">
+\[
+\boxed{
+\mathrm{BEI}_i
+\;=\;
+100\Bigl(0.25\,S_i \;+\; 0.30\,T_i \;+\; 0.20\,P_i \;+\; 0.25\,C_i\Bigr)
+}
+\]
+</div>
+<p>with:</p>
+<ul>
+  <li>\(S_i\) = specialized supply scarcity</li>
+  <li>\(T_i\) = timely access burden</li>
+  <li>\(P_i\) = pediatric access gap</li>
+  <li>\(C_i\) = structural capacity gap</li>
+</ul>
+<p>Each component is scaled to \([0,1]\): \(0\) = best structural access, \(1\) = worst. <strong>Higher BEI = worse structural inequity in timely burn-care access.</strong></p>
+
+<hr>
+
+<h2 id="s2-notation">2) Geography, Sets, and Notation</h2>
+
+<h3>Index sets</h3>
+<ul>
+  <li>\(i \in \mathcal{I}\) — census tracts</li>
+  <li>\(j \in \mathcal{J}\) — hospitals / facilities from NIRD</li>
+  <li>\(d \in \mathcal{D} \subseteq \mathcal{J}\) — definitive burn centers</li>
+  <li>\(s \in \mathcal{S} \subseteq \mathcal{J}\) — stabilization-capable hospitals</li>
+</ul>
+
+<h3>Population terms</h3>
+<ul>
+  <li>\(\mathrm{Pop}_i\) — total tract population</li>
+  <li>\(\mathrm{ChildPop}_i\) — tract child population</li>
+</ul>
+
+<h3>Transport sets and scenarios</h3>
+<ul>
+  <li>\(m \in \mathcal{M} = \{\text{road},\,\text{air}\}\) — transport mode</li>
+  <li>\(\omega \in \Omega\) — transport scenario (e.g. ground-only or conditional ground-plus-air)</li>
+</ul>
+
+<h3>Travel times</h3>
+<ul>
+  <li>\(t_{ij}^{(\text{road})}\) — road-network travel time, tract \(i\) to facility \(j\)</li>
+  <li>\(t_{sd}^{(\text{road})}\) — road-network travel time, stabilization hospital \(s\) to burn center \(d\)</li>
+  <li>\(t_{ij}^{(\text{air})}\) — total air-access time, tract \(i\) to facility \(j\)</li>
+  <li>\(t_{sd}^{(\text{air})}\) — total air-access time, stabilization hospital \(s\) to burn center \(d\)</li>
+  <li>\(\tilde{t}_{ij}^{(m,\omega)}\) — scenario-specific feasible travel time for leg \((i,j)\) under mode \(m\)</li>
+  <li>\(\tilde{t}_{sd}^{(m,\omega)}\) — scenario-specific feasible travel time for leg \((s,d)\) under mode \(m\)</li>
+</ul>
+
+<p>Feasible mode-specific time — for any origin-destination pair \((a,b)\):</p>
+<div class="math-block">
+\[
+\tilde{t}_{ab}^{(m,\omega)}
+\;=\;
+\begin{cases}
+t_{ab}^{(m)}, & \text{if mode }m\text{ is allowed under scenario }\omega \\[4pt]
++\infty,       & \text{otherwise}
+\end{cases}
+\]
+</div>
+
+<h3>Air-access decomposition</h3>
+<p>Air access is treated as a <strong>multi-stage pathway</strong>, not just straight-line flight time:</p>
+<div class="math-block">
+\[
+t_{ab}^{(\text{air})}
+\;=\;
+t_a^{\text{dispatch}}
+\;+\;
+t_a^{\text{ground-to-launch}}
+\;+\;
+t_{ab}^{\text{flight}}
+\;+\;
+t_b^{\text{landing-to-facility}}
+\;+\;
+t_{ab}^{\text{handoff}}
+\]
+</div>
+<p>Road legs are computed from OpenStreetMap + OSRM; candidate airport/heliport infrastructure sourced from public FAA records.</p>
+
+<h3>Transfer penalty</h3>
+<p>\(\tau_s\) is a <strong>structural routing penalty</strong> — not patient-level waiting time — representing the extra burden of requiring interfacility transfer. For a first implementation set \(\tau_s = \tau\) for all \(s\), where \(\tau\) is a constant (e.g. 30, 45, or 60 minutes), then test sensitivity:</p>
+<div class="math-block">
+\[
+\tau_s \;=\; \tau \quad \forall\, s \in \mathcal{S}
+\]
+</div>
+
+<hr>
+
+<h2 id="s2-decay">3) Distance-Decay Function</h2>
+<p>A step-decay function is recommended for transparency and ease of explanation:</p>
+<div class="math-block">
+\[
+g(t)
+\;=\;
+\begin{cases}
+1.00, & t \;\leq\; 30 \\[3pt]
+0.60, & 30 \;\lt\; t \;\leq\; 60 \\[3pt]
+0.30, & 60 \;\lt\; t \;\leq\; 90 \\[3pt]
+0,    & t \;\gt\; 90
+\end{cases}
+\]
+</div>
+<p>This gives a primary 60-minute interpretation while still distinguishing 30-minute and 90-minute sensitivity bands.</p>
+
+<hr>
+
+<h2 id="s2-norm">4) Robust Normalization</h2>
+<p>For any raw metric \(X_i\), define <strong>robust min-max normalization</strong> using national tract percentiles:</p>
+<div class="math-block">
+\[
+\mathrm{Norm}(X_i)
+\;=\;
+\min\!\left\{
+  1,\;\;
+  \max\!\left[
+    0,\;\;
+    \frac{X_i - Q_5(X)}{Q_{95}(X) - Q_5(X)}
+  \right]
+\right\}
+\]
+</div>
+<p>where \(Q_5(X)\) and \(Q_{95}(X)\) are the 5th and 95th percentiles of the raw tract distribution. This prevents extreme outliers from dominating the score.</p>
+<p>For metrics where <strong>higher raw values are better</strong>, convert to a gap:</p>
+<div class="math-block">
+\[
+\mathrm{Gap}(X_i) \;=\; 1 - \mathrm{Norm}(X_i)
+\]
+</div>
+
+<hr>
+
+<h2 id="s2-components">5) Component Formulas</h2>
+
+<!-- ── S ── -->
+<h3>A. Specialized Supply Scarcity \(S_i\)</h3>
+<p>Measures how scarce specialized burn-care supply is around tract \(i\) using a weighted E2SFCA accessibility score.</p>
+
+<h4>A1. Facility capability weight</h4>
+<div class="math-block">
+\[
+q_j^{(S)}
+\;=\;
+\begin{cases}
+1.00, & \text{ABA verified burn center} \\[3pt]
+0.85, & \text{state-designated burn center} \\[3pt]
+0.50, & \text{burn-capable non-verified center} \\[3pt]
+0.20, & \text{trauma-only stabilization site} \\[3pt]
+0,    & \text{otherwise}
+\end{cases}
+\]
+</div>
+
+<h4>A2. Facility-side provider-to-population ratio</h4>
+<div class="math-block">
+\[
+R_j^{(S)}
+\;=\;
+\frac{q_j^{(S)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}} \mathrm{Pop}_k\; g(t_{kj})}
+\]
+</div>
+
+<h4>A3. Tract-side specialized supply accessibility</h4>
+<div class="math-block">
+\[
+A_i^{(S)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}} R_j^{(S)}\; g(t_{ij})
+\]
+</div>
+
+<h4>A4. Convert to scarcity score</h4>
+<div class="math-block boxed">
+\[
+\boxed{S_i \;=\; 1 - \mathrm{Norm}\!\left(A_i^{(S)}\right)}
+\]
+</div>
+<p>Large \(A_i^{(S)}\) = strong nearby specialty supply; large \(S_i\) = scarce specialty supply.</p>
+
+<!-- ── T ── -->
+<h3>B. Timely Access Burden \(T_i\)</h3>
+<p>Measures the burden of reaching definitive burn care under a <strong>regionalized, tiered system</strong>. Use <strong>scenario-based multimodal routing</strong> and publish at least a ground-only baseline and a conditional ground-plus-air sensitivity scenario.</p>
+
+<h4>B1. Direct travel time to definitive burn care</h4>
+<div class="math-block">
+\[
+T^{\text{dir}}_{i,\omega}
+\;=\;
+\min_{d\,\in\,\mathcal{D}}
+\!\left[\;
+  \min_{m\,\in\,\mathcal{M}}
+  \tilde{t}_{id}^{(m,\omega)}
+\;\right]
+\]
+</div>
+
+<h4>B2. Travel time to nearest stabilization-capable hospital</h4>
+<div class="math-block">
+\[
+T^{\text{stab}}_{i,\omega}
+\;=\;
+\min_{s\,\in\,\mathcal{S}}
+\!\left[\;
+  \min_{m\,\in\,\mathcal{M}}
+  \tilde{t}_{is}^{(m,\omega)}
+\;\right]
+\]
+</div>
+
+<h4>B3. Transfer-aware definitive care path</h4>
+<div class="math-block">
+\[
+T^{\text{trans}}_{i,\omega}
+\;=\;
+\min_{\substack{s\,\in\,\mathcal{S} \\ d\,\in\,\mathcal{D}}}
+\!\left[\;
+  \min_{m_1\,\in\,\mathcal{M}} \tilde{t}_{is}^{(m_1,\omega)}
+  \;+\;
+  \tau_s
+  \;+\;
+  \min_{m_2\,\in\,\mathcal{M}} \tilde{t}_{sd}^{(m_2,\omega)}
+\;\right]
+\]
+</div>
+<p>The first leg and second leg may use different feasible modes under the same scenario.</p>
+
+<h4>B4. System travel time</h4>
+<div class="math-block">
+\[
+T^{\text{sys}}_{i,\omega}
+\;=\;
+\min\!\left(T^{\text{dir}}_{i,\omega},\;\; T^{\text{trans}}_{i,\omega}\right)
+\]
+</div>
+<p>The system can function either via direct definitive access or via stabilization followed by transfer.</p>
+
+<h4>B5. Tier penalty</h4>
+<p>Penalizes places that lack prompt stabilization even if a transfer pathway technically exists:</p>
+<div class="math-block">
+\[
+\Delta_{i,\omega}
+\;=\;
+\max\!\left(0,\;\; T^{\text{stab}}_{i,\omega} - 30\right)
+\]
+</div>
+<p>No penalty if stabilization is within 30 minutes; increasing penalty beyond that.</p>
+
+<h4>B6. Timely access burden score</h4>
+<div class="math-block boxed">
+\[
+\boxed{
+T_{i,\omega}
+\;=\;
+0.75\;\mathrm{Norm}\!\left(T^{\text{sys}}_{i,\omega}\right)
+\;+\;
+0.25\;\mathrm{Norm}\!\left(\Delta_{i,\omega}\right)
+}
+\]
+</div>
+<p>First term = overall system burden to definitive care; second term = penalty for weak tiered infrastructure.</p>
+
+<h4>B7. Public-data implementation for road + air</h4>
+<ul>
+  <li><strong>Road legs</strong>: OpenStreetMap road data + OSRM route/table services</li>
+  <li><strong>Air infrastructure</strong>: public FAA airport / heliport records</li>
+  <li><strong>Flight segment</strong>: coordinate-based distance ÷ documented scenario cruise speed</li>
+  <li><strong>Dispatch / handoff</strong>: explicit analyst-chosen scenario constants</li>
+  <li><strong>Feasibility rule</strong>: air only allowed when origin and destination are linked to plausible launch / landing infrastructure</li>
+</ul>
+
+<!-- ── P ── -->
+<h3>C. Pediatric Access Gap \(P_i\)</h3>
+
+<h4>C1. Pediatric capability weight</h4>
+<div class="math-block">
+\[
+q_j^{(P)}
+\;=\;
+\begin{cases}
+1.00, & \text{pediatric burn capable and ABA verified} \\[3pt]
+0.85, & \text{pediatric burn capable and state-designated} \\[3pt]
+0.60, & \text{pediatric trauma L1/L2 plus burn-capable} \\[3pt]
+0.25, & \text{pediatric stabilization only} \\[3pt]
+0,    & \text{otherwise}
+\end{cases}
+\]
+</div>
+<p>Mapped from NIRD fields: <code>BURN_PEDS</code>, <code>PEDS_TRAUMA_L1</code>, <code>PEDS_TRAUMA_L2</code>, <code>ABA_VERIFIED</code>, <code>BC_STATE_DESIGNATED</code>.</p>
+
+<h4>C2. Facility-side pediatric provider-to-child-population ratio</h4>
+<div class="math-block">
+\[
+R_j^{(P)}
+\;=\;
+\frac{q_j^{(P)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}} \mathrm{ChildPop}_k\; g(t_{kj})}
+\]
+</div>
+
+<h4>C3. Tract-side pediatric accessibility</h4>
+<div class="math-block">
+\[
+A_i^{(P)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}} R_j^{(P)}\; g(t_{ij})
+\]
+</div>
+
+<h4>C4. Convert to pediatric access gap</h4>
+<div class="math-block boxed">
+\[
+\boxed{P_i \;=\; 1 - \mathrm{Norm}\!\left(A_i^{(P)}\right)}
+\]
+</div>
+<p>High \(P_i\) = worse pediatric burn access relative to child population.</p>
+
+<!-- ── C ── -->
+<h3>D. Structural Capacity Gap \(C_i\)</h3>
+
+<h4>D1. Effective structural bed count</h4>
+<div class="math-block">
+\[
+\mathrm{EffBeds}_j \;=\; \mathrm{BURN\_BEDS}_j \cdot u_j
+\]
+</div>
+<p>Baseline structural scenario: \(u_j = 1\). Conservative sensitivity: \(u_j = u\) with \(u \in [0.6,\,0.9]\). This does <strong>not</strong> claim real-time occupancy truth.</p>
+
+<h4>D2. Facility-side bed-to-population ratio</h4>
+<div class="math-block">
+\[
+R_j^{(C)}
+\;=\;
+\frac{\mathrm{EffBeds}_j\; q_j^{(S)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}} \mathrm{Pop}_k\; g(t_{kj})}
+\]
+</div>
+
+<h4>D3. Tract-side structural bed accessibility</h4>
+<div class="math-block">
+\[
+A_i^{(C)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}} R_j^{(C)}\; g(t_{ij})
+\]
+</div>
+
+<h4>D4. Convert to capacity gap</h4>
+<div class="math-block boxed">
+\[
+\boxed{C_i \;=\; 1 - \mathrm{Norm}\!\left(A_i^{(C)}\right)}
+\]
+</div>
+<p>High \(C_i\) = poor structural access to burn-bed capacity.</p>
+
+<hr>
+
+<h2 id="s2-expanded">6) Final BEI — Full Expanded Form</h2>
+<div class="math-block boxed">
+\[
+\boxed{
+\mathrm{BEI}_i
+\;=\;
+100\,\Bigl[
+  \;0.25\Bigl(1-\mathrm{Norm}(A_i^{(S)})\Bigr)
+  \;+\;
+  0.30\Bigl(0.75\;\mathrm{Norm}(T_{i,\omega}^{\text{sys}})+0.25\;\mathrm{Norm}(\Delta_{i,\omega})\Bigr)
+  \;+\;
+  0.20\Bigl(1-\mathrm{Norm}(A_i^{(P)})\Bigr)
+  \;+\;
+  0.25\Bigl(1-\mathrm{Norm}(A_i^{(C)})\Bigr)
+\;\Bigr]
+}
+\]
+</div>
+
+<p>where the sub-expressions are:</p>
+
+<div class="math-block">
+\[
+A_i^{(S)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}}
+\left(\frac{q_j^{(S)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}}\mathrm{Pop}_k\,g(t_{kj})}\right)
+g(t_{ij})
+\]
+</div>
+
+<div class="math-block">
+\[
+T_{i,\omega}^{\text{sys}}
+\;=\;
+\min\!\left(
+  \min_{d\,\in\,\mathcal{D}}\;\min_{m\,\in\,\mathcal{M}}\,\tilde{t}_{id}^{(m,\omega)},\;\;
+  \min_{\substack{s\,\in\,\mathcal{S}\\d\,\in\,\mathcal{D}}}
+  \!\left(
+    \min_{m_1\,\in\,\mathcal{M}} \tilde{t}_{is}^{(m_1,\omega)}
+    +\tau_s+
+    \min_{m_2\,\in\,\mathcal{M}} \tilde{t}_{sd}^{(m_2,\omega)}
+  \right)
+\right)
+\]
+</div>
+
+<div class="math-block">
+\[
+\Delta_{i,\omega}
+\;=\;
+\max\!\left(0,\; T_{i,\omega}^{\text{stab}}-30\right)
+\qquad\text{with}\qquad
+T_{i,\omega}^{\text{stab}}
+\;=\;
+\min_{s\,\in\,\mathcal{S}}\;\min_{m\,\in\,\mathcal{M}}\,\tilde{t}_{is}^{(m,\omega)}
+\]
+</div>
+
+<div class="math-block">
+\[
+A_i^{(P)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}}
+\left(\frac{q_j^{(P)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}}\mathrm{ChildPop}_k\,g(t_{kj})}\right)
+g(t_{ij})
+\]
+</div>
+
+<div class="math-block">
+\[
+A_i^{(C)}
+\;=\;
+\sum_{j\,\in\,\mathcal{J}}
+\left(\frac{\mathrm{EffBeds}_j\;q_j^{(S)}}{\displaystyle\sum_{k\,\in\,\mathcal{I}}\mathrm{Pop}_k\,g(t_{kj})}\right)
+g(t_{ij})
+\]
+</div>
+
+<hr>
+
+<h2 id="s2-companion">7) Companion Outputs to Publish beside BEI</h2>
+<p>Report these separately so judges can see concrete challenge outputs alongside the composite score.</p>
+
+<div class="math-block">
+\[
+\mathrm{NearestBurnTime}_{i,\omega}
+\;=\;
+\min_{d\,\in\,\mathcal{D}}\;\min_{m\,\in\,\mathcal{M}}\,\tilde{t}_{id}^{(m,\omega)}
+\]
+</div>
+
+<div class="math-block">
+\[
+\mathrm{BedsPer100k}_i
+\;=\;
+100{,}000\cdot
+\frac{\displaystyle\sum_j \mathrm{EffBeds}_j\;g(t_{ij})}{\mathrm{Pop}_i}
+\]
+</div>
+
+<div class="math-block">
+\[
+\mathrm{PedsAccess}_i \;=\; A_i^{(P)}
+\]
+</div>
+
+<div class="math-block">
+\[
+\mathrm{CentersPer100k}_i
+\;=\;
+100{,}000\cdot
+\frac{\displaystyle\sum_j q_j^{(S)}\,g(t_{ij})}{\mathrm{Pop}_i}
+\]
+</div>
+
+<p>For county \(m\), use population-weighted rollups:</p>
+<div class="math-block">
+\[
+\mathrm{BEI}_m
+\;=\;
+\frac{\displaystyle\sum_{i\,\in\,m}\mathrm{Pop}_i\;\mathrm{BEI}_i}
+     {\displaystyle\sum_{i\,\in\,m}\mathrm{Pop}_i}
+\]
+</div>
+
+<hr>
+
+<h2 id="s2-overlay">8) Need Overlay — Kept Separate from BEI</h2>
+<p>Because BEI is a <strong>structural access and capacity</strong> measure, demand uncertainty is not folded into the core score. Define a separate priority overlay if needed:</p>
+<div class="math-block">
+\[
+\mathrm{NeedOverlay}_i
+\;=\;
+\alpha\;\mathrm{Norm}(\mathrm{Pop}_i)
+\;+\;
+(1-\alpha)\;\mathrm{Norm}(\mathrm{ChildPop}_i)
+\]
+</div>
+<p>Then a planning-layer priority score:</p>
+<div class="math-block">
+\[
+\mathrm{Priority}_i
+\;=\;
+\mathrm{BEI}_i \;\times\; \bigl(1 + \lambda\;\mathrm{NeedOverlay}_i\bigr)
+\]
+</div>
+<p>Keep this <strong>outside</strong> the core BEI.</p>
+
+<hr>
+
+<h2 id="s2-params">9) Recommended Default Parameter Choices</h2>
+<ul>
+  <li>Catchment bands: 30 / 60 / 90 minutes</li>
+  <li>Primary policy threshold: 60 minutes</li>
+  <li>Stabilization threshold in \(\Delta_{i,\omega}\): 30 minutes</li>
+  <li>Transfer penalty \(\tau\): 45 minutes (baseline)</li>
+  <li>Baseline scenario: ground-only</li>
+  <li>Multimodal sensitivity scenario: conditional ground-plus-air</li>
+  <li>Air dispatch and handoff terms: explicit scenario constants</li>
+  <li>Air flight segment: coordinate-based distance ÷ documented scenario cruise speed</li>
+  <li>Capacity utilization factor \(u\): 1.0 (baseline), 0.75 (sensitivity)</li>
+  <li>Normalization: 5th–95th percentile winsorized min-max</li>
+</ul>
+
+<hr>
+
+<h2 id="s2-data">10) Public/Free Data Scope for the Transport Model</h2>
+<p>The <strong>road</strong> portion is feasible with public/free sources:</p>
+<ul>
+  <li>OpenStreetMap road network data</li>
+  <li>OSRM route/table services</li>
+</ul>
+<p>The <strong>air sensitivity scenario</strong> is feasible with public/free infrastructure data:</p>
+<ul>
+  <li>Public FAA airport / heliport records for launch and landing infrastructure</li>
+  <li>Tract and hospital coordinates from Census geographies / geocoding</li>
+  <li>Analyst-defined dispatch, handoff, and cruise-speed parameters</li>
+</ul>
+<p>What is <strong>not</strong> directly observed: real-time rotor-wing availability, weather constraints, live dispatch logic. The air component must therefore be reported as a <strong>scenario-based sensitivity analysis</strong>.</p>
+
+<hr>
+
+<h2>11) Plain-English Interpretation</h2>
+<p>A tract gets a <strong>high BEI</strong> if it has:</p>
+<ul>
+  <li>Weak nearby specialized burn supply</li>
+  <li>Long direct or transfer-aware travel burden</li>
+  <li>Poor pediatric-specific access</li>
+  <li>Weak structural access to burn-bed capacity</li>
+</ul>
+<p>A tract gets a <strong>low BEI</strong> if it has:</p>
+<ul>
+  <li>Strong nearby specialty supply</li>
+  <li>Timely direct or regionalized transfer access</li>
+  <li>Good pediatric access</li>
+  <li>Strong structural bed access</li>
+</ul>
+
+<blockquote>Optional next steps: turn this into a <strong>Methods section in paper style</strong>, or into a <strong>notebook-ready variable mapping</strong> from NIRD + ACS + RUCA + OSRM.</blockquote>
+
+</div><!-- /s2 -->
+
+</body>
+</html>

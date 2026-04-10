@@ -1,0 +1,66 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-03-16T23:26:31.930599+00:00",
+  "profile": {
+    "id": "mn_high_detail",
+    "display_name": "Minnesota High Detail",
+    "scope_level": "state",
+    "output_prefix": "mn_high_detail",
+    "origin_state_fips": [
+      "27"
+    ],
+    "destination_region": [
+      "MN",
+      "ND",
+      "SD",
+      "IA",
+      "WI"
+    ],
+    "notes": "Minnesota-only tract-detail presentation scope. Uses national ingestion/routing but exports MN-focused outputs with regional cross-border destinations preserved for border tracts."
+  },
+  "scenarios": {
+    "default": "ground_only",
+    "enabled": [
+      "ground_only",
+      "ground_plus_air"
+    ]
+  },
+  "assets": {
+    "tract": {
+      "ground_only": {
+        "table": "tables\\mn_high_detail_tract_bei.parquet",
+        "access_table": "tables\\mn_high_detail_tract_access.parquet",
+        "geojson": "geojson\\mn_high_detail_tract_bei_ground.geojson"
+      }
+    }
+  },
+  "facility_assets": {},
+  "methodology": {
+    "data_sources": [
+      "NIRD (hospital infrastructure)",
+      "ACS 5-year 2022 (population, child population)",
+      "TIGER/Line 2022 (tract geometry)",
+      "RUCA (rurality classification)"
+    ],
+    "limitations": [
+      "Minnesota-only tract origins; destinations limited to Minnesota plus nearby states.",
+      "Ground-only travel scenario; air-access sensitivity is not included in this MVP manifest."
+    ],
+    "scope_note": "MN MVP presentation build scoped to Minnesota tracts with regional cross-border destinations; uses ground-only access and BEI outputs."
+  },
+  "ui_defaults": {
+    "geography_level": "tract",
+    "metric": "bei",
+    "map_center": [
+      46.0,
+      -94.0
+    ],
+    "map_zoom": 6.0,
+    "narrative_order": [
+      "burn_center_distribution",
+      "rural_urban_travel_burden",
+      "pediatric_access",
+      "burn_bed_capacity"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "run_id": "stage07",
+  "profile": "full",
+  "created_at": "2026-03-16T23:28:36.549244+00:00",
+  "artifacts": [
+    {
+      "artifact_id": "07_dataset_air",
+      "stage_id": "07",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\air_sensitivity_ground_plus_air.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": "ground_plus_air"
+    },
+    {
+      "artifact_id": "07_table_air",
+      "stage_id": "07",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\07_tables_air_sensitivity_ground_plus_air.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": "ground_plus_air"
+    },
+    {
+      "artifact_id": "07_fig_air",
+      "stage_id": "07",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\07_figures_air_sensitivity_ground_plus_air.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": "ground_plus_air"
+    },
+    {
+      "artifact_id": "07_finding",
+      "stage_id": "07",
+      "artifact_type": "finding",
+      "path": "outputs\\metrics\\07_findings_ground_plus_air.json",
+      "format": "json",
+      "artifact_role": "",
+      "scenario_id": "ground_plus_air"
+    }
+  ]
+}

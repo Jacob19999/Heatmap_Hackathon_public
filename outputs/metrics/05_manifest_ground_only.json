@@ -1,0 +1,43 @@
+{
+  "run_id": "stage05",
+  "profile": "full",
+  "created_at": "2026-03-16T23:59:12.091699+00:00",
+  "artifacts": [
+    {
+      "artifact_id": "05_dataset_transfer",
+      "stage_id": "05",
+      "artifact_type": "dataset",
+      "path": "data\\processed\\transfer_aware_access.parquet",
+      "format": "parquet",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "05_table_comparison",
+      "stage_id": "05",
+      "artifact_type": "table",
+      "path": "outputs\\tables\\05_tables_transfer_comparison_ground_only.csv",
+      "format": "csv",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "05_fig_transfer",
+      "stage_id": "05",
+      "artifact_type": "figure",
+      "path": "outputs\\figures\\05_figures_transfer_aware_ground_only.png",
+      "format": "png",
+      "artifact_role": "",
+      "scenario_id": null
+    },
+    {
+      "artifact_id": "05_finding",
+      "stage_id": "05",
+      "artifact_type": "finding",
+      "path": "outputs\\metrics\\05_findings_ground_only.json",
+      "format": "json",
+      "artifact_role": "",
+      "scenario_id": null
+    }
+  ]
+}

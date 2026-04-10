@@ -1,0 +1,636 @@
+Unique_ID,Street address,City,State,Zip
+6940010,4315 Diplomacy Dr,Anchorage,AK,99508
+6940020,3200 Providence Dr,Anchorage,AK,99508
+6530373,1108 Ross Clark Cir,Dothan,AL,36301
+6530304,619 19th St S,Birmingham,AL,35233
+6530170,1600 7th Ave South,Birmingham,AL,35233
+6530510,101 Sivley Rd,Huntsville,AL,35801
+6530600,2451 University Hospital Dr,Mobile,AL,36617
+6530705,2105 E South Blvd,Montgomery,AL,36116
+6860021,1200 N Beaver St,Flagstaff,AZ,86001
+6860028,1955 W Frye Rd,Chandler,AZ,85224
+6860013,5555 W Thunderbird Rd,Glendale,AZ,85306
+6860027,13677 W McDowell Rd,Goodyear,AZ,85395
+6860016,1400 S Dobson Rd,Mesa,AZ,85202
+6860250,1111 E McDowell Rd,Phoenix,AZ,85006
+6860280,350 W Thomas Rd,Phoenix,AZ,85013
+6860325,19829 North 27th Ave,Phoenix,AZ,85027
+6860253,250 E Dunlap Ave,Phoenix,AZ,85020
+6860210,1919 E Thomas Rd,Phoenix,AZ,85016
+6860255,2601 E Roosevelt St,Phoenix,AZ,85008
+6860376,7400 E Osborn Rd,Scottsdale,AZ,85251
+6860516,1501 N Campbell Ave,Tucson,AZ,85719
+6860460,350 N Wilmot Rd,Tucson,AZ,85718
+6710300,300 Werner St,Hot Springs,AR,71913
+6710340,1 Children's Way,Little Rock,AR,72202
+6710440,4301 W Markham St,Little Rock,AR,72205
+6710335,9601 Baptist Health Dr,Little Rock,AR,72205
+6710400,2 St Vincent Circle,Little Rock,AR,72205
+6710195,3215 N Northhills Blvd,Fayetteville,AR,72703
+6930275,1411 East 31st St,Oakland,CA,94602
+6930133,20103 Lake Chabot Rd,Castro Valley,CA,94546
+6932180,747 52nd St,Oakland,CA,94609
+6930096,1531 Esplanade,Chico,CA,95926
+6933853,1601 Ygnacio Valley Rd,Walnut Creek,CA,94598
+6930790,2823 Fresno St,Fresno,CA,93721
+6930079,420 34th St,Bakersfield,CA,93301
+6931178,1600 West Avenue J,Lancaster,CA,93534
+6930444,8700 Beverly Blvd,West Hollywood,CA,90048
+6931470,4650 Sunset Blvd,Los Angeles,CA,90027
+6932450,1798 North Garey Ave,Pomona,CA,91767
+6931790,3630 East Imperial Hwy,Lynwood,CA,90262
+6932860,15031 Rinaldi St,Mission Hills,CA,91345
+6931755,757 Westwood Plaza,Los Angeles,CA,90095
+6930379,7300 Medical Center Dr,West Hills,CA,91307
+6933679,3330 Lomita Blvd,Torrance,CA,90505
+6931440,1401 S Grand Ave,Los Angeles,CA,90015
+6932118,18300 Roscoe Blvd,Northridge,CA,91335
+6933683,1000 W Carson St,Torrance,CA,90502
+6933488,23845 McBean Pkwy,Valencia,CA,91355
+6932350,100 W California Blvd,Pasadena,CA,91105
+6931580,1200 N State St,Los Angeles,CA,90033
+6931370,2801 Atlantic Ave,Long Beach,CA,90806
+6931360,1050 Linden Ave,Long Beach,CA,90813
+6930814,9300 Valley Children's Place,Madera,CA,93636
+6932720,1441 Constitution Blvd,Salinas,CA,93906
+6931915,27700 Medical Center Rd,Mission Viejo,CA,92691
+6932290,101 The City Dr South,Orange,CA,92868
+6932287,1201 West La Veta Ave,Orange,CA,92868
+6933377,1001 North Tustin Ave,Santa Ana,CA,92705
+6932645,1 Medical Plaza Dr,Roseville,CA,95661
+6932325,1150 N Indian Canyon Dr,Palm Springs,CA,92262
+6932585,4445 Magnolia Ave,Riverside,CA,92501
+6930640,36485 Inland Valley Rd,Wildomar,CA,92595
+6930110,26520 Cactus Avenue,Moreno Valley,CA,92555
+6930037,6501 Coyle Ave,Carmichael,CA,95608
+6932673,6600 Bruceville Rd,Sacramento,CA,95823
+6932680,2315 Stockton Blvd,Sacramento,CA,95817
+6933080,2425 Stockton Blvd,Sacramento,CA,95817
+6932770,400 N  Pepper Ave,Colton,CA,92324
+6930053,11234 Anderson St,Loma Linda,CA,92354
+6930660,2185 West Citracado Pkwy,Escondido,CA,92029
+6932775,3020 Children's Way,San Diego,CA,92123
+6931130,9888 Genessee Ave,La Jolla,CA,92037
+6932810,4077 5th Ave,San Diego,CA,92103
+6932785,7901 Frost St,San Diego,CA,92123
+6932820,200 W Arbor Dr,San Diego,CA,92103
+6933060,1001 Potrero Ave,San Francisco,CA,94110
+6933020,900 Hyde St,San Francisco,CA,94109
+6930780,500 West Hospital Rd,French Camp,CA,95231
+6932330,300 Pasteur Dr,Palo Alto,CA,94305
+6933375,400 W Pueblo St,Santa Barbara,CA,93105
+6933240,751 South Bascom Ave,San Jose,CA,95128
+6933199,225 N Jackson Ave,San Jose,CA,95116
+6932520,2175 Rosaline Ave,Redding,CA,96001
+6930422,1 Quality Dr,Vacaville,CA,95688
+6930403,1200 B. Gale Wilson Blvd,Fairfield,CA,94533
+6930109,1165 Montgomery Dr,Santa Rosa,CA,95405
+6930016,1441 Florida Ave,Modesto,CA,95350
+6931929,1700 Coffee Rd,Modesto,CA,95355
+6933820,300 Hillmont Ave,Ventura,CA,93003
+6933672,215 West Janss Rd,Thousand Oaks,CA,91360
+6840280,13123 East 16th Ave,Aurora,CO,80045
+6840430,12605 E 16th Ave,Aurora,CO,80045
+6840458,9191 Grant St,Thornton,CO,80229
+6840530,501 E Hampden Ave,Englewood,CO,80113
+6840014,1501 South Potomac St,Aurora,CO,80012
+6840805,7700 S Broadway St,Littleton,CO,80122
+6840021,200 Exempla Circle,Lafayette,CO,80026
+6840237,4747 Arapahoe Ave,Boulder,CO,80304
+6840290,777 Bannock St,Denver,CO,80204
+6840023,10101 Ridge Gale Pkwy,Lone Tree,CO,80124
+6840022,9395 Crown Crest Blvd,Parker,CO,80138
+6840145,2222 N Nevada Ave,Colorado Springs,CO,80907
+6840190,1400 E Boulder St,Colorado Springs,CO,80909
+6840104,4090 Briargate Pkwy,Colorado Springs,CO,80920
+6840385,11600 W 2nd Pl,Lakewood,CO,80228
+6840012,8300 W 38th Ave,Wheat Ridge,CO,80033
+6840033,2500 Rocky Mountain Ave,Loveland,CO,80538
+6840625,2635 N 7th St,Grand Junction,CO,81501
+6840650,1801 16th St,Greeley,CO,80631
+6160002,267 Grant St,Bridgeport,CT,6610
+6160100,24 Hospital Ave,Danbury,CT,6810
+6160530,34 Maple St,Norwalk,CT,6856
+6160010,2800 Main St,Bridgeport,CT,6606
+6160009,1 Hospital Plz,Stamford,CT,6904
+6160450,282 Washington St,Hartford,CT,6106
+6160003,80 Seymour St,Hartford,CT,6102
+6160004,114 Woodland St,Hartford,CT,6105
+6160740,56 Franklin St,Waterbury,CT,6706
+6160750,64 Robbins St,Waterbury,CT,6708
+6160400,20 York St,New Haven,CT,6510
+6160410,1450 Chapel St,New Haven,CT,6511
+6310120,4755 Ogletown-Stanton Rd,Newark,DE,19713
+6310110,1600 Rockland Rd,Wilmington,DE,19803
+6330120,110 Irving St,Washington,DC,20010
+6330140,900 23rd St,Washington,DC,20037
+6330100,2041 Georgia Ave,Washington,DC,20060
+6330030,111 Michigan Ave,Washington,DC,20010
+6390283,1600 SW Archer Rd,Gainesville,FL,32610
+6390775,615 N Bonita Ave,Panama City,FL,32401
+6390530,1350 Hickory St,Melbourne,FL,32901
+6390295,3501 Johnson St,Hollywood,FL,33021
+6390210,1600 S Andrews Ave,Fort Lauderdale,FL,33316
+6390849,201 E Sample Rd,Pompano Beach,FL,33064
+6390700,2001 Kingsley Ave,Orange Park,FL,32073
+6390082,655 W 8th St,Jacksonville,FL,32209
+6390134,800 Prudential Dr,Jacksonville,FL,32207
+6390792,1000 W Moreno St,Pensacola,FL,32501
+6390830,5151 N Ninth Ave,Pensacola,FL,32504
+6391060,1 Tampa General Circle,Tampa,FL,33606
+6390053,3001 Martin Luther King Jr. Blvd,Tampa,FL,33607
+6390240,2776 Cleveland Ave,Fort Myers,FL,33901
+6391030,1300 Miccosukee Rd,Tallahassee,FL,32308
+6390055,2020 59th St West,Bradenton,FL,34209
+6390680,1431 SW 1st Ave,Ocala,FL,34471
+6390515,11750 Bird Rd,Miami,FL,33175
+6390570,1611 NW 12th Ave,Miami,FL,33136
+6390625,3100 SW 62nd Ave,Miami,FL,33155
+6390282,20900 Biscayne Blvd,Miami,FL,33180
+6390560,9333 SW 152nd St,Palmetto Bay,FL,33157
+6390253,1000 Mar-Walt Dr,Fort Walton Beach,FL,32547
+6390695,52 W Underwood St,Orlando,FL,32806
+6390440,700 W Oak St,Kissimmee,FL,34741
+6390081,5352 Linton Blvd,Delray Beach,FL,33484
+6391140,901 45th St,Mangonia Park,FL,33407
+6390385,14000 Fivay Rd,Hudson,FL,34667
+6390930,701 6th St South,St Petersburg,FL,33701
+6390900,501 6th Ave South,St Petersburg,FL,33701
+6390470,1324 Lakeland Hills Blvd,Lakeland,FL,33805
+6390052,1700 S Tamiami Trail,Sarasota,FL,34239
+6390955,1401 W Seminole Blvd,Sanford,FL,32771
+6390048,1700 S 23rd St,Fort Pierce,FL,34950
+6390056,303 N Clyde Morris Blvd,Daytona Beach,FL,32114
+6390409,3625 University Blvd S,Jacksonville,FL,32216
+6380040,1199 Prince Ave,Athens,GA,30606
+6380110,303 Parkway Drive Northeast,Atlanta,GA,30312
+6380140,1405 Clifton Rd,Atlanta,GA,30322
+6380130,80 Jesse Hill Jr Dr SE,Atlanta,GA,30303
+6380490,1001 Johnson Ferry Rd,Atlanta,GA,30342
+6380254,1120 15th St,Augusta,GA,30912
+6380265,3651 Wheeler Rd,Augusta,GA,30909
+6380285,3950 Austell Rd,Austell,GA,30106
+6380430,710 Center St,Columbus,GA,31904
+6380019,743 Spring St,Gainesville,GA,30501
+6380325,1000 Medical Center Blvd,Lawrenceville,GA,30046
+6380730,777 Hemlock St,Macon,GA,31201
+6380775,677 Church St,Marietta,GA,30060
+6380950,304 Turner McCall Blvd,Rome,GA,30165
+6380995,3000 Hospital Blvd,Roswell,GA,30076
+6381027,4700 Waters Ave,Savannah,GA,31404
+6950380,1301 Punchbowl St,Honolulu,HI,96813
+6950410,1 Jarrett White Rd,Honolulu,HI,96859
+6950405,888 South King St,Honolulu,HI,96813
+6820040,1055 N Curtis Rd,Boise,ID,83706
+6820005,777 Hospital Way,Pocatello,ID,83201
+6820165,3100 Channing Way,Idaho Falls,ID,83404
+6820084,190 E Bannock St,Boise,ID,83712
+6432710,1005 Broadway St,Quincy,IL,62301
+6433070,611 W Park St,Urbana,IL,61801
+6430841,2160 S 1st Ave,Maywood,IL,60153
+6432413,4440 W 95th St,Oak Lawn,IL,60453
+6432055,5101 Willow Springs Rd,La Grange,IL,60525
+6432435,701 West North Ave,Melrose Park,IL,60160
+6430240,3249 South Oak Park Ave,Berwyn,IL,60402
+6430405,1775 Dempster St,Park Ridge,IL,60068
+6431613,800 West Biesterfield Road,Elk Grove Village,IL,60007
+6432485,800 West Central Road,Arlington Heights,IL,60005
+6431926,1555 Barrington Road,Hoffman Estates,IL,60169
+6431660,2650 Ridge Avenue,Evanston,IL,60201
+6431665,2100 Pfingsten Road,Glenview,IL,60025
+6431670,355 Ridge Avenue,Evanston,IL,60202
+6430024,836 West Wellington Ave,Chicago,IL,60657
+6430560,225 East Chicago Avenue,Chicago,IL,60614
+6430600,1969 West Ogden Avenue,Chicago,IL,60612
+6430930,1500 South Fairfield Ave,Chicago,IL,60608
+6430545,251 East Huron Street,Chicago,IL,60611
+6431210,5841 South Maryland Ave,Chicago,IL,60637
+6431790,701 Winthrop Ave,Glendale Heights,IL,60139
+6431920,120 North Oak St,Hinsdale,IL,60521
+6431475,3815 Highland Ave,Downers Grove,IL,60515
+6430019,25 N Winfield Rd,Winfield,IL,60190
+6432350,801 S Washington St,Naperville,IL,60540
+6431620,155 East Brush Hill Rd,Elmhurst,IL,60126
+6430327,405 W Jackson St,Carbondale,IL,62901
+6432030,500 W Court St,Kankakee,IL,60901
+6432025,350 N Wall Street,Kankakee,IL,60901
+6431610,1425 North Randall Rd,Elgin,IL,60120
+6431765,300 Randall Road,Geneva,IL,60134
+6430115,1325 North Highland Ave,Aurora,IL,60506
+6431600,77 North Airlite Street,Elgin,IL,60120
+6430100,2000 Ogden Avenue,Aurora,IL,60504
+6430160,450 West Highway 22,Barrington,IL,60010
+6432080,801 South Milwaukee Ave,Libertyville,IL,60048
+6431890,777 Park Avenue West,Highland Park,IL,60035
+6432060,1000 N Westmoreland Rd,Lake Forest,IL,60045
+6433170,1324 North Sheridan Road,Waukegan,IL,60085
+6431370,2300 N Edward St,Decatur,IL,62526
+6432300,150 West High St,Morris,IL,60450
+6430477,10400 Haligus Road,Huntley,IL,60142
+6432127,4201 Medical Center Drive,McHenry,IL,60050
+6430245,1304 Franklin Ave,Normal,IL,61761
+6430260,2200 E Washington St,Bloomington,IL,61701
+6432620,530 NE Glen Oak Ave,Peoria,IL,61637
+6432570,221 NE Glen Oak Ave,Peoria,IL,61636
+6431511,801 Illini Dr,Silvis,IL,61282
+6430016,2701 17th St,Rock Island,IL,61201
+6432950,701 North 1st St,Springfield,IL,62781
+6432980,800 E Carpenter St,Springfield,IL,62769
+6431990,333 North Madison St,Joliet,IL,60435
+6432000,1900 Silver Cross Blvd,New Lenox,IL,60451
+6430034,500 Remington Blvd,Bolingbrook,IL,60440
+6432800,5666 E State St,Rockford,IL,61108
+6430484,8201 E Riverside Blvd,Rockford,IL,61114
+6432810,1401 E State St,Rockford,IL,61104
+6420420,7950 West Jefferson Blvd,Fort Wayne,IN,46804
+6429153,11109 Parkview Plaza Dr,Fort Wayne,IN,46845
+6420715,2001 West 86th St,Indianapolis,IN,46260
+6420620,720 Eskenazi Ave,Indianapolis,IN,46202
+6420660,1701 N Senate,Indianapolis,IN,46206
+6420632,705 Riley Hospital Dr,Indianapolis,IN,46202
+6421290,615 N Michigan St,South Bend,IN,46601
+6420027,3700 Washington Ave,Evansville,IN,47714
+6420320,600 Mary St,Evansville,IN,47747
+6620765,200 Hawkins Dr,Iowa City,IA,52242
+6620420,1200 Pleasant St,Des Moines,IA,50309
+6620003,1111 6th Ave,Des Moines,IA,50314
+6621275,801 5th St,Sioux City,IA,51101
+6670775,10500 Quivira Rd,Overland Park,KS,66215
+6671100,929 N St. Francis St,Wichita,KS,67214
+6671170,550 N Hillside,Wichita,KS,67214
+6671025,1500 SW 10th Ave,Topeka,KS,66604
+6670510,4000 Cambridge St,Kansas City,KS,66160
+6510455,800 Rose St,Lexington,KY,40536
+6510540,231 East Chestnut St,Louisville,KY,40202
+6510550,530 South Jackson St,Louisville,KY,40202
+6510860,911 Bypass Rd,Pikeville,KY,41501
+6720776,1541 Kings Hwy,Shreveport,LA,71103
+6720028,5000 Hennessy Blvd,Baton Rouge,LA,70808
+6720042,8585 Picardy Ave,Baton Rouge,LA,70809
+6720340,1214 Coolidge Blvd,Lafayette,LA,70503
+6720343,4801 Ambassador Caffery Pkwy,Lafayette,LA,70508
+6430101,2000 Canal St,New Orleans,LA,70112
+6720020,211 Fourth St,Alexandria,LA,71301
+6720180,95 Judge Tanner Blvd,Covington,LA,70433
+6720254,15790 Paul Vega MD Dr,Hammond,LA,70403
+6110430,22 Bramhall St,Portland,ME,4102
+6110050,489 State St,Bangor,ME,4401
+6320180,600 N Wolfe St,Baltimore,MD,21287
+6320050,4940 Eastern Ave,Baltimore,MD,21224
+6320280,2401 W Belvedere Ave,Baltimore,MD,21215
+6320360,8901 Rockville Pike,Bethesda,MD,20889
+6320350,8600 Old Georgetown Rd,Bethesda,MD,20814
+6320610,3001 Hospital Drive,Cheverly,MD,20785
+6141435,101 Page St,New Bedford,MA,2740
+6141955,759 Chestnut St,Springfield,MA,1199
+6140690,41 Mall Rd,Burlington,MA,1805
+6141900,55 Fogg Rd,South Weymouth,MA,2190
+6140013,330 Brookline Ave,Boston,MA,2215
+6140270,300 Longwood Ave,Boston,MA,2115
+6140010,1 Boston Medical Center Pl,Boston,MA,2118
+6140215,75 Francis St,Boston,MA,2115
+6140430,55 Fruit St,Boston,MA,2114
+6140465,800 Washington St,Boston,MA,2111
+6140581,51 Blossom St,Boston,MA,2114
+6442035,416 Connable Ave,Petoskey,MI,49770
+6440018,1 Genesys Pkwy,Grand Blanc,MI,48439
+6441030,1 Hurley Plz,Flint,MI,48503
+6440013,1105 Sixth St,Traverse City,MI,49684
+6441595,1215 E Michigan Ave,Lansing,MI,48909
+6441500,205 N East Ave,Jackson,MI,49201
+6440017,1521 Gull Rd,Kalamazoo,MI,49048
+6441550,601 John St,Kalamazoo,MI,49007
+6441210,200 Jefferson Ave,Grand Rapids,MI,49503
+6440021,100 Michigan Street NE,Grand Rapids,MI,49503
+6441231,5900 Byron Center Rd,Wyoming,MI,49519
+6441640,1375 N Main St,Lapeer,MI,48446
+6441830,15855 Nineteen Mile Rd,Clinton Township,MI,48038
+6441847,1000 Harrington St,Mount Clemens,MI,48043
+6441720,580 W College Avenue,Marquette,MI,49855
+6441785,4000 Wellness Dr,Midland,MI,48670
+6440024,1700 Clinton St,Muskegon,MI,49444
+6440780,16001 W Nine Mile Rd,Southfield,MI,48075
+6440048,47601 Grand River Ave,Novi,MI,48374
+6442463,44201 Dequindre Rd,Troy,MI,48085
+6442245,3601 W 13 Mile Rd,Royal Oak,MI,48073
+6441011,28050 Grand River Ave,Farmington Hills,MI,48336
+6442148,50 N Perry St,Pontiac,MI,48342
+6442140,44405 Woodward Ave,Pontiac,MI,48341
+6442290,800 S Washington Ave,Saginaw,MI,48601
+6440023,1447 N Harrison,Saginaw,MI,48602
+6440087,5301 Mcauley Dr,Ypsilanti,MI,48197
+6440110,1500 E Medical Center Dr,Ann Arbor,MI,48109
+6440805,22101 Moross Rd,Detroit,MI,48236
+6442455,5450 Fort St,Trenton,MI,48183
+6440405,18101 Oakwood Blvd,Dearborn,MI,48124
+6440480,3901 Beaubien Blvd,Detroit,MI,48201
+6440630,6071 West Outer Dr,Detroit,MI,48235
+6440555,4201 Saint Antoine St,Detroit,MI,48201
+6440650,2799 West Grand Blvd,Detroit,MI,48202
+6441669,36475 Five Mile Rd,Livonia,MI,48154
+6610085,4050 Coon Rapids Blvd,Coon Rapids,MN,55433
+6610410,407 E 3rd St,Duluth,MN,55805
+6610400,915 E 1st St,Duluth,MN,55805
+6610390,502 E 2nd St,Duluth,MN,55805
+6610449,2525 Chicago Ave South,Minneapolis,MN,55404
+6610950,701 Park Ave S,Minneapolis,MN,55415
+6610004,420 Delaware St SE,Minneapolis,MN,55455
+6611455,3300 Oakdale Ave N,Robbinsdale,MN,55422
+6610451,1216 2nd Street SW,Rochester,MN,55902
+6611540,1406 Sixth Ave N,Saint Cloud,MN,56303
+6611570,640 Jackson St,Saint Paul,MN,55101
+6540315,6051 US Highway 49,Hattiesburg,MS,39401
+6540300,4500 13th Street,Gulfport,MS,39501
+6540004,2500 North State St,Jackson,MS,39216
+6540810,830 South Gloster St,Tupelo,MS,38801
+6630150,1 Hospital Dr,Columbia,MO,65212
+6630009,5325 Faron St,Saint Joseph,MO,64506
+6630605,2525 Glenn Hendren Dr,Liberty,MO,64068
+6630785,2800 Clay Edwards Dr,North Kansas City,MO,64116
+6631362,3801 S National Ave,Springfield,MO,65807
+6631350,1235 E Cherokee,Springfield,MO,65804
+6630340,2401 Gillham Rd,Kansas City,MO,64108
+6630435,2316 E Meyer Blvd,Kansas City,MO,64132
+6630380,2301 Holmes St,Kansas City,MO,64108
+6630470,4401 Wornall Rd,Kansas City,MO,64111
+6630039,19600 East 39th St,Independence,MO,64057
+6630008,1102 W 32nd St,Joplin,MO,64804
+6630330,100 Mercy Way,Joplin,MO,64804
+6630985,12303 DePaul Dr,Bridgeton,MO,63044
+6631160,10010 Kennerly Rd,Saint Louis,MO,63128
+6630930,1 Barnes Jewish Hospital Plz,Saint Louis,MO,63110
+6631020,3635 Vista Ave,Saint Louis,MO,63104
+6631180,1 Childrens Pl,Saint Louis,MO,63110
+6631165,615 S New Ballas Rd,Saint Louis,MO,63141
+6630945,1465 S Grand Blvd,Saint Louis,MO,63104
+6810003,1101 26th St S,Great Falls,MT,59405
+6810430,500 W Broadway,Missoula,MT,59802
+6810020,2800 10th Ave North,Billings,MT,59108
+6810030,1233 N 30th St,Billings,MT,59101
+6660002,10 E 31st St,Kearney,NE,68847
+6660720,7500 Mercy Rd,Omaha,NE,68124
+6660635,8200 Dodge St,Omaha,NE,68114
+6660005,4350 Dewey Ave,Omaha,NE,68105
+6660420,2300 South 16th St,Lincoln,NE,68502
+6660460,555 S 70th St,Lincoln,NE,68510
+6660810,4021 Avenue B,Scottsbluff,NE,69361
+6880069,3186 S Maryland Pkwy,Las Vegas,NV,89109
+6880071,1800 W Charleston Blvd,Las Vegas,NV,89102
+6880130,1155 Mill St,Reno,NV,89502
+6120170,1 Medical Center Dr,Lebanon,NH,3756
+6120030,250 Pleasant St,Concord,NH,3301
+6120240,1 Elliot Way,Manchester,NH,3103
+6120001,333 Borthwick Ave,Portsmouth,NH,3801
+6220040,1925 Pacific Ave,Atlantic City,NJ,8401
+6220340,30 Prospect Ave,Hackensack,NJ,7601
+6220190,1 Cooper Plaza,Camden,NJ,8103
+6220785,150 Bergen St,Newark,NJ,7103
+6220800,94 Old Short Hills Rd,Livingston,NJ,7039
+6220435,355 Grand St,Jersey City,NJ,7302
+6221500,750 Brunswick Ave,Trenton,NJ,8638
+6220920,1 Robert Wood Johnson Pl,New Brunswick,NJ,8901
+6220740,1945 Route 33,Neptune,NJ,7754
+6220680,100 Madison Ave,Morristown,NJ,7960
+6221120,703 Main St,Paterson,NJ,7503
+6850037,2211 Lomas Blvd NE,Albuquerque,NM,87106
+6210030,43 New Scotland Ave,Albany,NY,12208
+6213010,234 E 149th St,Bronx,NY,10451
+6212700,1400 Pelham Parkway South,Bronx,NY,10461
+6210034,4422 Third Ave,Bronx,NY,10457
+6212060,33-57 Harrison St,Johnson City,NY,13790
+6210295,241 North Rd,Poughkeepsie,NY,12601
+6214140,45 Reade Pl,Poughkeepsie,NY,12601
+6211070,462 Grider St,Buffalo,NY,14215
+6211025,100 High St,Buffalo,NY,14203
+6210440,1 Brookdale Plaza,Brooklyn,NY,11212
+6210747,4802 10th Ave,Brooklyn,NY,11219
+6210555,506 6th St,Brooklyn,NY,11215
+6210690,451 Clarkson Ave,Brooklyn,NY,11203
+6210770,150 55th St,Brooklyn,NY,11220
+6214330,601 Elmwwod Ave,Rochester,NY,14642
+6213735,1 Health Way,Oceanside,NY,11572
+6211810,2201 Hempstead Turnpike,East Meadow,NY,11554
+6211675,26901 76th Ave,New Hyde Park,NY,11040
+6212357,300 Community Dr,Manhasset,NY,11030
+6212450,259 1st St,Mineola,NY,11501
+6213335,1111 Amsterdam Ave,New York,NY,10025
+6210032,622 W 168th St,New York,NY,10032
+6212630,462 First Ave,New York,NY,10016
+6213510,525 E 68th St,New York,NY,10065
+6212830,506 Lenox Ave,New York,NY,10037
+6214885,750 E Adams St,Syracuse,NY,13210
+6210041,707 East Main St,Middletown,NY,10940
+6211980,8900 Van Wyck Expressway,Jamaica,NY,11418
+6211595,5645 Main St,Flushing,NY,11355
+6213180,7901 Broadway,Elmhurst,NY,11373
+6214735,475 Seaview Ave,Staten Island,NY,10305
+6210025,355 Bard Ave,Staten Island,NY,10310
+6215295,1000 Montauk Hwy,West Islip,NY,11795
+6210280,301 E Main St,Bay Shore,NY,11706
+6214775,101 Nicolls Rd,Stony Brook,NY,11794
+6215150,100 Woods Rd,Valhalla,NY,10595
+6360013,509 Biltmore Ave,Asheville,NC,28801
+6360355,2301 Erwin Rd,Durham,NC,27710
+6361700,1 Medical Center Blvd,Winston-Salem,NC,27157
+6360002,1200 N Elm St,Greensboro,NC,27401
+6360280,1000 Blythe Blvd,Charlotte,NC,28203
+6360019,2131 South 17th St,Wilmington,NC,28401
+6360260,101 Manning Dr,Chapel Hill,NC,27514
+6360690,2100 Stantonsburg Rd,Greenville,NC,27835
+6360001,3000 New Bern Ave,Raleigh,NC,27610
+6640040,900 E Broadway,Bismarck,ND,58501
+6640020,300 North 7th St,Bismarck,ND,58501
+6640003,3000 32nd Ave South,Fargo,ND,58103
+6640180,801 Broadway N,Fargo,ND,58104
+6640001,1200 S Columbia Rd,Grand Forks,ND,58201
+6640004,1 Burdick Expy,Minot,ND,58701
+6411540,1001 Bellefontaine Ave,Lima,OH,45804
+6411560,730 W Market St,Lima,OH,45801
+6410945,6780 Mayfield Rd,Mayfield Heights,OH,44124
+6410710,18101 Lorain Ave,Cleveland,OH,44111
+6410655,2500 MetroHealth Dr,Cleveland,OH,44109
+6410922,2101 Adelbert Rd,Cleveland,OH,44106
+6410920,11100 Euclid Ave,Cleveland,OH,44106
+6411010,111 S Grant Ave,Columbus,OH,43215
+6410950,700 Children's Dr,Columbus,OH,43205
+6411100,410 West 10th Ave,Columbus,OH,43210
+6418083,6001 East Broad Street,Columbus,OH,43213
+6411110,3535 Olentangy River Rd,Columbus,OH,43214
+6410391,3333 Burnet Ave,Cincinnati,OH,45229
+6410435,234 Goodman St,Cincinnati,OH,45219
+6412170,2213 Cherry St,Toledo,OH,43608
+6412180,2142 N Cove Blvd,Toledo,OH,43606
+6412440,1044 Belmont Ave,Youngstown,OH,44501
+6411160,1 Childrens Plz,Dayton,OH,45404
+6411466,3535 Southern Blvd,Kettering,OH,45429
+6411190,1 Wyoming St,Dayton,OH,45409
+6410016,335 Glessner Ave,Mansfield,OH,44903
+6410280,2600 6th Street SW,Canton,OH,44710
+6410290,1320 Mercy Dr NW,Canton,OH,44708
+6410055,1 Perkins Sq,Akron,OH,44308
+6410010,1 Akron General Ave,Akron,OH,44307
+6410030,525 E Market St,Akron,OH,44309
+6730024,700 NE 13th St,Oklahoma City,OK,73104
+6730728,3300 NW Expy,Oklahoma City,OK,73112
+6731220,1923 S Utica Ave,Tulsa,OK,74104
+6920110,3600 NW Samaritan Dr,Corvallis,OR,97330
+6920070,2500 NE Neff Rd,Bend,OR,97701
+6920280,2825 E Barnett Rd,Medford,OR,97504
+6920051,3333 River Bend Dr,Springfield,OR,97477
+6920708,890 SE Oak St,Salem,OR,97301
+6920003,2801 N Gantenbein Ave,Portland,OR,97227
+6920570,3181 SW Sam Jackson Park Rd,Portland,OR,97239
+6230041,320 E North Ave,Pittsburgh,PA,15212
+6232510,1400 Locust St,Pittsburgh,PA,15219
+6230029,200 Lothrop St,Pittsburgh,PA,15213
+6232430,4401 Penn Avenue,Pittsburgh,PA,15224
+6232551,2570 Haymaker Rd,Monroeville,PA,15146
+6232690,4800 Friendship Ave,Pittsburgh,PA,15224
+6233443,420 S 5th Ave,West Reading,PA,19611
+6230086,620 Howard Ave,Altoona,PA,16601
+6232970,1 Guthrie Sq,Sayre,PA,18840
+6231130,1201 Langhorne-Newtown R,Langhorne,PA,19047
+6233090,700 Lawn Ave,Sellersville,PA,18960
+6230052,1086 Franklin St,Johnstown,PA,15905
+6233430,255 W Lancaster Ave,Paoli,PA,19301
+6230297,503 N 21st St,Camp Hill,PA,17011
+6230705,500 University Dr,Hershey,PA,17033
+6230400,1 Medical Center Blvd,Chester,PA,19013
+6230760,201 State St,Erie,PA,16550
+6232980,1800 Mulberry St,Scranton,PA,18510
+6231120,555 N Duke St,Lancaster,PA,17602
+6230013,1200 S Cedar Crest Blvd,Allentown,PA,18103
+6232725,1000 E Mountain Dr,Wilkes-Barre,PA,18711
+6230010,1200 Old York Rd,Abington,PA,19001
+6231970,100 E Lancaster Ave,Wynnewood,PA,19096
+6230550,100 North Academy Ave,Danville,PA,17822
+6230049,801 Ostrum St,Bethlehem,PA,18015
+6230035,2545 Schoenersville Rd,Bethlehem,PA,18017
+6230456,1872 St Luke's Blvd,Easton,PA,18045
+6231634,5501 Old York Rd,Philadelphia,PA,19141
+6232300,3401 N Broad St,Philadelphia,PA,19140
+6230043,111 South 11th St,Philadelphia,PA,19107
+6232170,51 N 39th St,Philadelphia,PA,19104
+6232210,3601 A Street,Philadelphia,PA,19134
+6231730,3401 Civic Center Blvd,Philadelphia,PA,19104
+6230054,10800 Knights Rd,Philadelphia,PA,19114
+6233500,700 High St,Williamsport,PA,17701
+6233550,1001 S George Sr,York,PA,17403
+6150150,593 Eddy St,Providence,RI,2903
+6370232,9330 Medical Plaza Dr,Charleston,SC,29406
+6370085,169 Ashley Ave,Charleston,SC,29425
+6370435,10 McClennan Banks Dr,Charleston,SC,29425
+6370009,555 E Cheves St,Florence,SC,29506
+6370323,701 Grove Rd,Greenville,SC,29605
+6370477,809 82nd Pkwy,Myrtle Beach,SC,29572
+6370140,5 Richland Medical Park Dr,Columbia,SC,29203
+6370610,101 E Wood St,Spartanburg,SC,29303
+6650002,353 Fairmont Blvd,Rapid City,SD,57701
+6650420,1325 S Cliff Ave,Sioux Falls,SD,57105
+6650007,1305 W 18th St,Sioux Falls,SD,57117
+6521020,3441 Dickerson Pike,Nashville,TN,37207
+6521060,1211 Medical Center Dr,Nashville,TN,37232
+6520065,975 E Third St,Chattanooga,TN,37403
+6520575,1924 Alcoa Hwy,Knoxville,TN,37920
+6520775,848 Adams Ave,Memphis,TN,38103
+6520695,877 Jefferson Ave,Memphis,TN,38103
+6520040,1 Medical Park Blvd,Bristol,TN,37620
+6520466,400 N State of Franklin Rd,Johnson City,TN,37604
+6743413,2401 S 31st St,Temple,TX,76508
+6741380,3551 Roger Brooke Dr,Fort Sam Houston,TX,78234
+6743106,4502 Medical Dr,San Antonio,TX,78229
+6743122,7700 Floyd Curl Dr,San Antonio,TX,78229
+6740500,2801 Franciscan Dr,Bryan,TX,77802
+6741790,2101 Pease St,Harlingen,TX,78550
+6742865,3901 W 15th St,Plano,TX,75075
+6740945,6200 W Parker Rd,Plano,TX,75093
+6740900,3500 Gaston Ave,Dallas,TX,75246
+6740935,1935 Medical District Dr,Dallas,TX,75235
+6741025,7777 Forest Ln,Dallas,TX,75230
+6741018,1441 N Beckley Ave,Dallas,TX,75203
+6740950,5200 Harry Hines Blvd,Dallas,TX,75235
+6741050,8200 Walnut Hill Ln,Dallas,TX,75231
+6741155,3535 S I-35 E,Denton,TX,76210
+6741225,10301 Gateway Blvd W,El Paso,TX,79925
+6741240,4815 Alameda Ave,El Paso,TX,79905
+6741615,301 University Blvd,Galveston,TX,77555
+6741605,815 Market St,Galveston,TX,77550
+6741932,1504 Ben Taub Loop,Houston,TX,77030
+6740149,500 W Medical Center Blvd,Webster,TX,77598
+6741890,6411 Fannin St,Houston,TX,77030
+6742018,6621 Fannin St,Houston,TX,77030
+6740549,6001 Kyle Pkwy,Kyle,TX,78640
+6740232,5501 S McColl Rd,Edinburg,TX,78539
+6742460,301 West Expy 83,McAllen,TX,78503
+6740038,4015 22nd Pl,Lubbock,TX,79410
+6742360,3615 19th St,Lubbock,TX,79410
+6742372,602 Indiana Ave,Lubbock,TX,79408
+6743650,100 Hillcrest Medical Blvd,Waco,TX,76712
+6740117,504 Medical Center Blvd,Conroe,TX,77304
+6740744,9250 Pinecroft Ave,The Woodlands,TX,77380
+6740760,600 Elizabeth St,Corpus Christi,TX,78404
+6740092,1000 S Beckham Ave,Tyler,TX,75701
+6741739,1650 W College St,Grapevine,TX,76051
+6741425,801 7th Ave,Fort Worth,TX,76104
+6740115,3301 Matlock Rd,Arlington,TX,76015
+6741483,1500 South Main St,Fort Worth,TX,76104
+6741440,1301 Pennsylvania Ave,Fort Worth,TX,76104
+6740147,4900 Mueller Blvd,Austin,TX,78723
+6741110,1500 Red River,Austin,TX,78701
+6740095,901 W Ben White Blvd,Austin,TX,78704
+6740136,1600 11th St,Wichita Falls,TX,76301
+6740412,201 Seton Pkwy,Round Rock,TX,78665
+6742345,2400 Round Rock Ave,Round Rock,TX,78681
+6740044,800 E Dawson,Tyler,TX,75701
+6740071,7101 S Padre Island Dr,Corpus Christi,TX,78412
+6741895,710 Cypress Creek Pkwy,Houston,TX,77090
+6870290,1200 East 3900 South,Salt Lake City,UT,84124
+6870141,5121 S Cottonwood St,Murray,UT,84107
+6870280,100 N Mario Capecchi Dr,Salt Lake City,UT,84113
+6870315,50 Medical Dr N,Salt Lake City,UT,84132
+6870220,1034 N 500 W,Provo,UT,84604
+6870016,1380 E Medical Center Dr,St George,UT,84790
+6870150,5475 S 500 E,Ogden,UT,84405
+6870160,4401 Harrison Blvd,Ogden,UT,84403
+6130001,111 Colchester Ave,Burlington,VT,5401
+6340040,1701 N George Mason Dr,Arlington,VA,22205
+6344000,1215 Lee St,Charlottesville,VA,22903
+6340025,1850 Town Center Pkwy,Reston,VA,20190
+6340490,3300 Gallows Rd,Falls Church,VA,22042
+6340290,1001 Sam Perry Blvd,Fredericksburg,VA,22401
+6340012,1602 Skipwith Rd,Richmond,VA,23229
+6340013,1901 Tate Springs Road,Lynchburg,VA,24501
+6340520,500 J Clyde Morris Blvd,Newport News,VA,23601
+6340578,601 Children's Ln,Norfolk,VA,23507
+6340620,600 Gresham Dr,Norfolk,VA,23507
+6340009,7101 Jahnke Rd,Richmond,VA,23225
+6340860,1250 E Marshall St,Richmond,VA,23298
+6341040,1906 Belleview Ave,Roanoke,VA,24014
+6341200,1840 Amherst St,Winchester,VA,22601
+6911130,400 NE Mother Joseph Pl,Vancouver,WA,98664
+6910610,325 9th Ave,Seattle,WA,98104
+6911030,9040 Jackson Ave,Joint Base Lewis-McChord,WA,98431
+6911018,315 Martin Luther King Jr Way,Tacoma,WA,98405
+6911033,317 Martin Luther King Jr Way,Tacoma,WA,98403
+6910004,1321 Colby Ave,Everett,WA,98201
+6910980,101 W 8th Ave,Spokane,WA,99204
+6910001,2901 Squalicum Pkwy,Bellingham,WA,98225
+6350345,1340 Hal Greer Blvd,Huntington,WV,25701
+6350120,501 Morris St,Charleston,WV,25301
+6350400,2900 1st Ave,Huntington,WV,25702
+6350007,1 Medical Center Dr,Morgantown,WV,26505
+6350830,1 Medical Park,Wheeling,WV,26003
+6450021,2845 Greenbrier Rd,Green Bay,WI,54311
+6450450,835 S Van Buren St,Green Bay,WI,54301
+6450810,700 S Park St,Madison,WI,53715
+6450820,600 Highland Ave,Madison,WI,53792
+6450310,1221 Whipple St,Eau Claire,WI,54703
+6450680,1910 South Ave,La Crosse,WI,54601
+6452085,333 Pine Ridge Blvd,Wausau,WI,54401
+6451030,9000 W Wisconsin Ave,Milwaukee,WI,53226
+6452115,9200 W Wisconsin Ave,Milwaukee,WI,53226
+6451130,2301 North Lake Dr,Milwaukee,WI,53211
+6450015,1000 Mineral Point Ave,Janesville,WI,53547
+6450175,36500 Aurora Dr,Summit,WI,53066
+6451290,130 2nd St,Neenah,WI,54956
+6450860,611 N Saint Joseph Ave,Marshfield,WI,54449

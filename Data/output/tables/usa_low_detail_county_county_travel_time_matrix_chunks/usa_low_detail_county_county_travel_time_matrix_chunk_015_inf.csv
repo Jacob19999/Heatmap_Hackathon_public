@@ -1,0 +1,4 @@
+origin_id,destination_id,duration_min,valhalla_status_code,valhalla_error,origin_lat,origin_lon,destination_lat,destination_lon
+28055,6540004,inf,,,32.7555393,-91.0035351,32.32876949,-90.17555927
+28055,6720020,inf,,,32.7555393,-91.0035351,31.31486492,-92.4501485
+28055,6540315,inf,,,32.7555393,-91.0035351,31.3527393,-89.34205186
